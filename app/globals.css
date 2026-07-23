@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-dark: #1e3323;
+  --color-green-primary: #243824;
+  --color-green-medium: #2d4a2d;
+  --color-green-light: #3d6040;
+  --color-cream: #f5f0e8;
+  --color-cream-light: #faf7f2;
+  --color-cream-dark: #ede7db;
+  --color-gold: #c4a86b;
+  --color-gold-light: #d4bc8b;
+  --color-gold-dark: #a8894a;
+  --color-muted: #6b6b5e;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream-light);
+  color: var(--color-green-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Utility classes */
+.font-serif { font-family: var(--font-serif); }
+.font-sans  { font-family: var(--font-sans); }
+
+/* Animate on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger-children > *:nth-child(3) { transition-delay: 0.19s; }
+.stagger-children > *:nth-child(4) { transition-delay: 0.26s; }
+.stagger-children > *:nth-child(5) { transition-delay: 0.33s; }
+.stagger-children > *:nth-child(6) { transition-delay: 0.40s; }
+.stagger-children > *:nth-child(7) { transition-delay: 0.47s; }
