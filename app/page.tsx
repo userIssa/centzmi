@@ -306,9 +306,6 @@ export default function SinglePageHome() {
                 <div className="lg:col-span-2 bg-[#1e3323] p-10 flex flex-col justify-between">
                   <div>
                     <span className="text-4xl mb-6 block">{sol.icon}</span>
-                    <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-3 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                      SERVICE {String(i + 1).padStart(2, "0")}
-                    </p>
                     <h3 className="text-2xl lg:text-3xl font-bold text-[#f5f0e8] uppercase mb-3 tracking-wide" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                       {sol.title}
                     </h3>

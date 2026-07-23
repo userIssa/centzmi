@@ -50,12 +50,6 @@ export default function SolutionsPage() {
               <div className="lg:col-span-2 bg-[#1e3323] p-10 flex flex-col justify-between">
                 <div>
                   <span className="text-4xl mb-6 block">{sol.icon}</span>
-                  <p
-                    className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-3"
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    Service {String(i + 1).padStart(2, "0")}
-                  </p>
                   <h2
                     className="text-3xl lg:text-4xl font-light text-[#f5f0e8] mb-4 leading-tight"
                     style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
