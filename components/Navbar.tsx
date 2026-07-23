@@ -88,50 +88,26 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, "#hero")}
               className="flex items-center gap-2 group"
             >
-              <svg
-                className="w-5 h-5 text-[#1e3323]"
-                viewBox="0 0 40 40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M20 5 C14 5 14 15 20 20 C14 25 14 35 20 35 C26 35 26 25 20 20 C26 15 26 5 20 5 Z" />
-                <path d="M5 20 C5 14 15 14 20 20 C25 14 35 14 35 20 C35 26 25 26 20 20 C15 26 5 26 5 20 Z" />
-                <circle cx="20" cy="20" r="2.5" fill="currentColor" />
-              </svg>
-              <span
-                className="text-xs font-bold tracking-[0.25em] uppercase text-[#1e3323]"
-                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
-              >
-                CENTZMI
-              </span>
+              <img
+                src="/logo.png"
+                alt="CentzMi Logo"
+                className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
           </div>
-
-          {/* Desktop Center: Emblem + Brand Name */}
+ 
+          {/* Desktop Center: Logo */}
           <div className="hidden xl:flex absolute left-1/2 -translate-x-1/2 items-center">
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, "#hero")}
               className="flex flex-col items-center group cursor-pointer"
             >
-              <svg
-                className="w-5 h-5 mb-0.5 text-[#1e3323] transition-transform group-hover:scale-110 duration-300"
-                viewBox="0 0 40 40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path d="M20 5 C14 5 14 15 20 20 C14 25 14 35 20 35 C26 35 26 25 20 20 C26 15 26 5 20 5 Z" />
-                <path d="M5 20 C5 14 15 14 20 20 C25 14 35 14 35 20 C35 26 25 26 20 20 C15 26 5 26 5 20 Z" />
-                <circle cx="20" cy="20" r="2.5" fill="currentColor" />
-              </svg>
-              <span
-                className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#1e3323]"
-                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
-              >
-                CENTZMI
-              </span>
+              <img
+                src="/logo.png"
+                alt="CentzMi Logo"
+                className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
           </div>
 

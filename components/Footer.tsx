@@ -26,13 +26,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <span className="text-2xl font-bold tracking-widest text-[#f5f0e8] uppercase block" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                CENTZMI
-              </span>
-              <span className="text-[10px] tracking-[0.3em] text-[#c4a86b] uppercase mt-0.5 block font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                Creative Branding
-              </span>
+            <div className="mb-5">
+              <img
+                src="/logo.png"
+                alt="CentzMi Logo"
+                className="h-12 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </div>
             <p
               className="text-sm text-[#f5f0e8]/70 leading-relaxed mt-4 font-medium"
