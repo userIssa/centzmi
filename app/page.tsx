@@ -854,17 +854,26 @@ export default function SinglePageHome() {
             </div>
           </div>
 
-          <div className="mt-16 rounded-2xl overflow-hidden h-72 border border-[#ede7db]">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=4.805538,7.023238"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-16 rounded-2xl overflow-hidden h-72 border border-[#ede7db] relative group cursor-pointer"
+          >
             <iframe
               src="https://maps.google.com/maps?q=4.805538,7.023238&hl=en&z=16&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
+              style={{ border: 0, pointerEvents: "none" }}
               title="Office location map"
             />
-          </div>
+            {/* Overlay to intercept clicks and show subtle interactive hover state */}
+            <div className="absolute inset-0 bg-[#1e3323]/0 group-hover:bg-[#1e3323]/5 transition-colors duration-200 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 bg-[#1e3323] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                Open in Google Maps ↗
+              </span>
+            </div>
+          </a>
         </div>
       </section>
     </>

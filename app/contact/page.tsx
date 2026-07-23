@@ -173,15 +173,24 @@ export default function ContactPage() {
         </div>
 
         {/* Google Maps */}
-        <div className="max-w-7xl mx-auto mt-16 rounded-2xl overflow-hidden h-72 border border-[#ede7db]">
+        <a
+          href="https://www.google.com/maps/place/Victoria+Island,+Lagos/@6.4281,3.4162,16z"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block max-w-7xl mx-auto mt-16 rounded-2xl overflow-hidden h-72 border border-[#ede7db] relative group cursor-pointer"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.721844234093!2d3.4162!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53aec4dd92d%3A0x4c63c43a634ee5e!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1620000000000!5m2!1sen!2sng"
-            width="100%" height="100%" style={{ border: 0 }}
-            allowFullScreen loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            width="100%" height="100%" style={{ border: 0, pointerEvents: "none" }}
             title="CentzMi office location"
           />
-        </div>
+          {/* Overlay to intercept clicks and show subtle interactive hover state */}
+          <div className="absolute inset-0 bg-[#1e3323]/0 group-hover:bg-[#1e3323]/5 transition-colors duration-200 flex items-center justify-center">
+            <span className="opacity-0 group-hover:opacity-100 bg-[#1e3323] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "Inter, sans-serif" }}>
+              Open in Google Maps ↗
+            </span>
+          </div>
+        </a>
       </section>
     </>
   );
