@@ -69,12 +69,12 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                className={`text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
                   activeSection === link.href
                     ? "text-[#c4a86b]"
                     : "text-[#1e3323] hover:text-[#c4a86b]"
                 }`}
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 {link.label}
               </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
               </svg>
               <span
                 className="text-xs font-bold tracking-[0.25em] uppercase text-[#1e3323]"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 CENTZMI
               </span>
@@ -128,7 +128,7 @@ export default function Navbar() {
               </svg>
               <span
                 className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#1e3323]"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 CENTZMI
               </span>
@@ -141,8 +141,8 @@ export default function Navbar() {
               <a
                 href="#quote"
                 onClick={(e) => handleNavClick(e, "#quote")}
-                className="bg-[#1e3323] text-[#f5f0e8] text-xs font-medium px-5 py-2.5 rounded-full hover:bg-[#2d4a2d] transition-all duration-300 tracking-wide shadow-sm block"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
+                className="bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-[#2d4a2d] transition-all duration-300 shadow-sm block"
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Request a Quote
               </a>
@@ -182,9 +182,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-sm font-medium py-1.5 border-b border-[#ede7db]/40 ${
+                  className={`text-xs font-bold uppercase tracking-wider py-1.5 border-b border-[#ede7db]/40 ${
                     activeSection === link.href ? "text-[#c4a86b]" : "text-[#1e3323]"
                   }`}
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
                   {link.label}
                 </a>
@@ -192,7 +193,8 @@ export default function Navbar() {
               <a
                 href="#quote"
                 onClick={(e) => handleNavClick(e, "#quote")}
-                className="mt-2 text-center bg-[#1e3323] text-[#f5f0e8] text-sm font-medium px-6 py-2.5 rounded-full shadow-sm block"
+                className="mt-2 text-center bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-sm block"
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Request a Quote
               </a>

@@ -27,16 +27,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <span className="text-2xl font-bold tracking-widest text-[#f5f0e8] block">
+              <span className="text-2xl font-bold tracking-widest text-[#f5f0e8] uppercase block" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 CENTZMI
               </span>
-              <span className="text-[10px] tracking-[0.3em] text-[#c4a86b] uppercase mt-0.5 block">
+              <span className="text-[10px] tracking-[0.3em] text-[#c4a86b] uppercase mt-0.5 block font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 Creative Branding
               </span>
             </div>
             <p
-              className="text-sm text-[#f5f0e8]/65 leading-relaxed mt-4"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="text-sm text-[#f5f0e8]/70 leading-relaxed mt-4 font-medium"
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
               Creative branding and visual communications — helping businesses
               communicate with clarity, build stronger brands, and create lasting
@@ -47,7 +47,8 @@ export default function Footer() {
                 <a
                   key={s}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-[#f5f0e8]/20 flex items-center justify-center text-xs text-[#f5f0e8]/60 hover:border-[#c4a86b] hover:text-[#c4a86b] transition-colors"
+                  className="w-9 h-9 rounded-full border border-[#f5f0e8]/20 flex items-center justify-center text-xs font-bold text-[#f5f0e8]/70 hover:border-[#c4a86b] hover:text-[#c4a86b] transition-colors"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
                   {s}
                 </a>
@@ -58,18 +59,18 @@ export default function Footer() {
           {/* Solutions */}
           <div>
             <h4
-              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-medium"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-bold"
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
-              Solutions
+              SOLUTIONS
             </h4>
             <ul className="space-y-3">
               {footerSolutions.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-[#f5f0e8]/65 hover:text-[#c4a86b] transition-colors"
-                    style={{ fontFamily: "Inter, sans-serif" }}
+                    className="text-sm font-medium text-[#f5f0e8]/70 hover:text-[#c4a86b] transition-colors"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     {link.label}
                   </a>
@@ -81,18 +82,18 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4
-              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-medium"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-bold"
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
-              Navigation
+              NAVIGATION
             </h4>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-[#f5f0e8]/65 hover:text-[#c4a86b] transition-colors"
-                    style={{ fontFamily: "Inter, sans-serif" }}
+                    className="text-sm font-medium text-[#f5f0e8]/70 hover:text-[#c4a86b] transition-colors"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     {link.label}
                   </a>
@@ -104,19 +105,19 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4
-              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-medium"
-              style={{ fontFamily: "Inter, sans-serif" }}
+              className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] mb-5 font-bold"
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
-              Get in Touch
+              GET IN TOUCH
             </h4>
-            <ul className="space-y-3 text-sm text-[#f5f0e8]/65" style={{ fontFamily: "Inter, sans-serif" }}>
+            <ul className="space-y-3 text-sm text-[#f5f0e8]/70 font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               <li>
                 <a href="mailto:hello@centzmi.com" className="hover:text-[#c4a86b] transition-colors">
                   hello@centzmi.com
                 </a>
               </li>
               <li>
-                <a href="tel:+2348037529545" className="hover:text-[#c4a86b] transition-colors">
+                <a href="tel:+2348037529545" className="hover:text-[#c4a86b] transition-colors font-bold">
                   +234 803 752 9545
                 </a>
               </li>
@@ -126,9 +127,10 @@ export default function Footer() {
               <li className="pt-2">
                 <a
                   href="#quote"
-                  className="inline-block border border-[#c4a86b] text-[#c4a86b] text-xs tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all duration-200"
+                  className="inline-block border border-[#c4a86b] text-[#c4a86b] text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all duration-200"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
-                  Request a Quote
+                  REQUEST A QUOTE
                 </a>
               </li>
             </ul>
@@ -138,16 +140,16 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#f5f0e8]/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p
-            className="text-xs text-[#f5f0e8]/40"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            className="text-xs text-[#f5f0e8]/40 font-medium uppercase"
+            style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
           >
-            © {new Date().getFullYear()} CentzMi. All rights reserved.
+            © {new Date().getFullYear()} CentzMi. ALL RIGHTS RESERVED.
           </p>
           <p
-            className="text-xs text-[#f5f0e8]/30 italic"
-            style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
+            className="text-xs text-[#f5f0e8]/40 font-bold uppercase tracking-wider"
+            style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
           >
-            &quot;Every Brand Tells a Story.&quot;
+            &quot;EVERY BRAND TELLS A STORY.&quot;
           </p>
         </div>
       </div>

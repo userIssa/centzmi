@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/nexa-bold');
+@import url('https://fonts.cdnfonts.com/css/nexa');
 @import "tailwindcss";
 
 @theme {
@@ -12,8 +14,12 @@
   --color-gold-light: #d4bc8b;
   --color-gold-dark: #a8894a;
   --color-muted: #6b6b5e;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: 'Nexa Bold', 'Nexa', sans-serif;
+  --font-serif: 'Nexa Bold', 'Nexa', sans-serif;
+}
+
+html, body, button, input, textarea, select, h1, h2, h3, h4, h5, h6, p, a, span, div, li, label {
+  font-family: 'Nexa Bold', 'Nexa', sans-serif !important;
 }
 
 html {
@@ -23,13 +29,13 @@ html {
 body {
   background-color: var(--color-cream-light);
   color: var(--color-green-dark);
-  font-family: var(--font-sans);
+  font-family: 'Nexa Bold', 'Nexa', sans-serif !important;
   overflow-x: hidden;
 }
 
 /* Utility classes */
-.font-serif { font-family: var(--font-serif); }
-.font-sans  { font-family: var(--font-sans); }
+.font-serif { font-family: 'Nexa Bold', 'Nexa', sans-serif !important; }
+.font-sans  { font-family: 'Nexa Bold', 'Nexa', sans-serif !important; }
 
 /* Animate on scroll */
 .animate-on-scroll {
