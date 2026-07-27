@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Solutions", href: "#solutions" },
   { label: "Process", href: "#process" },
   { label: "Portfolio", href: "#portfolio" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -62,8 +63,23 @@ export default function Navbar() {
         }`}
       >
         <div className="px-6 lg:px-8 flex items-center justify-between relative z-10">
-          {/* Left: Nav Links */}
-          <nav className="hidden xl:flex items-center gap-7">
+          {/* Left: Logo */}
+          <div className="flex items-center">
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="flex items-center gap-2 group cursor-pointer"
+            >
+              <img
+                src="/logo.png"
+                alt="CentzMi Logo"
+                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </a>
+          </div>
+
+          {/* Desktop Center: Nav Links */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -81,36 +97,6 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Mobile Left Brand Name */}
-          <div className="flex xl:hidden items-center">
-            <a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex items-center gap-2 group"
-            >
-              <img
-                src="/logo.png"
-                alt="CentzMi Logo"
-                className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </a>
-          </div>
- 
-          {/* Desktop Center: Logo */}
-          <div className="hidden xl:flex absolute left-1/2 -translate-x-1/2 items-center">
-            <a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, "#hero")}
-              className="flex flex-col items-center group cursor-pointer"
-            >
-              <img
-                src="/logo.png"
-                alt="CentzMi Logo"
-                className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </a>
-          </div>
-
           {/* Right: CTA Button */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:block">
@@ -126,7 +112,7 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <button
-              className="xl:hidden flex flex-col gap-1.5 p-2"
+              className="lg:hidden flex flex-col gap-1.5 p-2"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -151,7 +137,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         {mobileOpen && (
-          <div className="xl:hidden px-6 pb-6 pt-2 border-t border-[#ede7db]/60 mt-2">
+          <div className="lg:hidden px-6 pb-6 pt-2 border-t border-[#ede7db]/60 mt-2">
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
