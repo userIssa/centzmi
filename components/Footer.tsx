@@ -20,7 +20,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1e3323] text-[#f5f0e8]">
+    <footer className="bg-[#4F0008] text-[#f5f0e8]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-10">
         {/* Top grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -127,7 +127,7 @@ export default function Footer() {
               <li className="pt-2">
                 <a
                   href="#quote"
-                  className="inline-block border border-[#c4a86b] text-[#c4a86b] text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all duration-200"
+                  className="inline-block border border-[#c4a86b] text-[#c4a86b] text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#7A000D] transition-all duration-200"
                   style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
                   REQUEST A QUOTE

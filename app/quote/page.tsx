@@ -70,7 +70,7 @@ export default function QuotePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             Get Started
@@ -99,11 +99,11 @@ export default function QuotePage() {
           {/* Success */}
           {status === "success" && (
             <div className="text-center py-24 bg-[#f5f0e8] rounded-2xl border border-[#ede7db]">
-              <div className="w-16 h-16 rounded-full bg-[#1e3323] flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 rounded-full bg-[#7A000D] flex items-center justify-center mx-auto mb-6">
                 <span className="text-[#c4a86b] text-2xl">✓</span>
               </div>
               <h2
-                className="text-4xl font-light text-[#1e3323] mb-4"
+                className="text-4xl font-light text-[#7A000D] mb-4"
                 style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
               >
                 Request Received
@@ -144,12 +144,12 @@ export default function QuotePage() {
 
               {/* Service */}
               <div>
-                <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   Service Required <span className="text-[#c4a86b]">*</span>
                 </label>
                 <select
                   name="service"
-                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.service ? "border-red-400" : "border-[#ede7db]"}`}
+                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.service ? "border-red-400" : "border-[#ede7db]"}`}
                   style={{ fontFamily: "Inter, sans-serif" }}
                   defaultValue=""
                 >
@@ -163,14 +163,14 @@ export default function QuotePage() {
 
               {/* Description */}
               <div>
-                <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   Project Description <span className="text-[#c4a86b]">*</span>
                 </label>
                 <textarea
                   name="description"
                   rows={5}
                   placeholder="Tell us about your project, brand, and what you're looking to achieve…"
-                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.description ? "border-red-400" : "border-[#ede7db]"}`}
+                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.description ? "border-red-400" : "border-[#ede7db]"}`}
                   style={{ fontFamily: "Inter, sans-serif" }}
                 />
                 {errors.description && <p className="text-red-500 text-xs mt-1.5">{errors.description}</p>}
@@ -180,12 +180,12 @@ export default function QuotePage() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <Field label="Estimated Quantity" name="quantity" placeholder="e.g. 500 units, 3 signage panels" />
                 <div>
-                  <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                  <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                     Budget Range <span className="text-[#6b6b5e] font-normal">(optional)</span>
                   </label>
                   <select
                     name="budget"
-                    className="w-full bg-[#f5f0e8] border border-[#ede7db] rounded-xl px-4 py-3.5 text-sm text-[#1e3323] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors"
+                    className="w-full bg-[#f5f0e8] border border-[#ede7db] rounded-xl px-4 py-3.5 text-sm text-[#7A000D] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors"
                     style={{ fontFamily: "Inter, sans-serif" }}
                     defaultValue=""
                   >
@@ -197,12 +197,12 @@ export default function QuotePage() {
 
               {/* Timeline */}
               <div>
-                <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   Preferred Timeline <span className="text-[#c4a86b]">*</span>
                 </label>
                 <select
                   name="timeline"
-                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.timeline ? "border-red-400" : "border-[#ede7db]"}`}
+                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors ${errors.timeline ? "border-red-400" : "border-[#ede7db]"}`}
                   style={{ fontFamily: "Inter, sans-serif" }}
                   defaultValue=""
                 >
@@ -214,7 +214,7 @@ export default function QuotePage() {
 
               {/* Reference Files Upload */}
               <div>
-                <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                   Reference Files <span className="text-[#6b6b5e] font-normal">(optional — logos, briefs, mood boards)</span>
                 </label>
                 <div className="border-2 border-dashed border-[#ede7db] rounded-xl p-8 text-center bg-[#f5f0e8] hover:border-[#c4a86b] transition-colors group">
@@ -235,7 +235,7 @@ export default function QuotePage() {
                   />
                   <label htmlFor="file-upload" className="cursor-pointer block">
                     <span className="text-3xl block mb-2 transition-transform group-hover:scale-110 duration-200">📎</span>
-                    <span id="file-label" className="text-sm font-medium text-[#1e3323] block" style={{ fontFamily: "Inter, sans-serif" }}>
+                    <span id="file-label" className="text-sm font-medium text-[#7A000D] block" style={{ fontFamily: "Inter, sans-serif" }}>
                       Click or drag files to upload
                     </span>
                     <span className="block text-xs text-[#6b6b5e]/70 mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -250,7 +250,7 @@ export default function QuotePage() {
                 type="submit"
                 id="submit-quote"
                 disabled={status === "submitting"}
-                className="w-full bg-[#1e3323] text-[#f5f0e8] text-sm font-semibold py-4 rounded-full hover:bg-[#2d4a2d] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full bg-[#7A000D] text-[#f5f0e8] text-sm font-semibold py-4 rounded-full hover:bg-[#930010] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 {status === "submitting" ? "Sending…" : "Submit Quote Request"}
@@ -275,12 +275,12 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+      <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
         {label} {required && <span className="text-[#c4a86b]">*</span>}
       </label>
       <input
         type={type} name={name} placeholder={placeholder}
-        className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${error ? "border-red-400" : "border-[#ede7db]"}`}
+        className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${error ? "border-red-400" : "border-[#ede7db]"}`}
         style={{ fontFamily: "Inter, sans-serif" }}
       />
       {error && <p className="text-red-500 text-xs mt-1.5">{error}</p>}

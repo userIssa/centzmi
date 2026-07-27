@@ -40,7 +40,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             Contact
@@ -69,13 +69,13 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-3" style={{ fontFamily: "Inter, sans-serif" }}>Phone</p>
-              <a href="tel:+2348000000000" className="text-sm text-[#1e3323] hover:text-[#c4a86b] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+              <a href="tel:+2348000000000" className="text-sm text-[#7A000D] hover:text-[#c4a86b] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
                 +234 800 000 0000
               </a>
             </div>
             <div>
               <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-3" style={{ fontFamily: "Inter, sans-serif" }}>Email</p>
-              <a href="mailto:hello@centzmi.com" className="text-sm text-[#1e3323] hover:text-[#c4a86b] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+              <a href="mailto:hello@centzmi.com" className="text-sm text-[#7A000D] hover:text-[#c4a86b] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
                 hello@centzmi.com
               </a>
             </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
               <div className="flex gap-3">
                 {[{ label: "LinkedIn", abbr: "Li" }, { label: "Instagram", abbr: "Ig" }, { label: "Facebook", abbr: "Fb" }, { label: "X", abbr: "X" }].map((s) => (
                   <a key={s.label} href="#" aria-label={s.label}
-                    className="w-10 h-10 rounded-full border border-[#ede7db] flex items-center justify-center text-xs font-medium text-[#6b6b5e] hover:border-[#1e3323] hover:text-[#1e3323] transition-colors"
+                    className="w-10 h-10 rounded-full border border-[#ede7db] flex items-center justify-center text-xs font-medium text-[#6b6b5e] hover:border-[#7A000D] hover:text-[#7A000D] transition-colors"
                     style={{ fontFamily: "Inter, sans-serif" }}>{s.abbr}</a>
                 ))}
               </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
           {/* Right — form */}
           <div>
-            <h2 className="text-3xl font-light text-[#1e3323] mb-8" style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}>
+            <h2 className="text-3xl font-light text-[#7A000D] mb-8" style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}>
               Send Us a Message
             </h2>
 
@@ -128,10 +128,10 @@ export default function ContactPage() {
 
             {status === "success" ? (
               <div className="bg-[#f5f0e8] rounded-2xl border border-[#ede7db] p-10 text-center">
-                <div className="w-14 h-14 rounded-full bg-[#1e3323] flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 rounded-full bg-[#7A000D] flex items-center justify-center mx-auto mb-5">
                   <span className="text-[#c4a86b] text-xl">✓</span>
                 </div>
-                <h3 className="text-2xl font-light text-[#1e3323] mb-3" style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}>
+                <h3 className="text-2xl font-light text-[#7A000D] mb-3" style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}>
                   Message Received
                 </h3>
                 <p className="text-sm text-[#6b6b5e] leading-relaxed mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -149,12 +149,12 @@ export default function ContactPage() {
                 </div>
                 <CF label="Phone" name="phone" type="tel" placeholder="+234 800 000 0000" />
                 <div>
-                  <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                  <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                     Message <span className="text-[#c4a86b]">*</span>
                   </label>
                   <textarea
                     name="message" rows={6} placeholder="How can we help you?"
-                    className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${errors.message ? "border-red-400" : "border-[#ede7db]"}`}
+                    className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${errors.message ? "border-red-400" : "border-[#ede7db]"}`}
                     style={{ fontFamily: "Inter, sans-serif" }}
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message}</p>}
@@ -162,7 +162,7 @@ export default function ContactPage() {
                 <button
                   type="submit" id="contact-submit"
                   disabled={status === "submitting"}
-                  className="w-full bg-[#1e3323] text-[#f5f0e8] text-sm font-semibold py-4 rounded-full hover:bg-[#2d4a2d] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-[#7A000D] text-[#f5f0e8] text-sm font-semibold py-4 rounded-full hover:bg-[#d60015] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   {status === "submitting" ? "Sending…" : "Send Message"}
@@ -185,8 +185,8 @@ export default function ContactPage() {
             title="CentzMi office location"
           />
           {/* Overlay to intercept clicks and show subtle interactive hover state */}
-          <div className="absolute inset-0 bg-[#1e3323]/0 group-hover:bg-[#1e3323]/5 transition-colors duration-200 flex items-center justify-center">
-            <span className="opacity-0 group-hover:opacity-100 bg-[#1e3323] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "Inter, sans-serif" }}>
+          <div className="absolute inset-0 bg-[#7A000D]/0 group-hover:bg-[#7A000D]/5 transition-colors duration-200 flex items-center justify-center">
+            <span className="opacity-0 group-hover:opacity-100 bg-[#7A000D] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "Inter, sans-serif" }}>
               Open in Google Maps ↗
             </span>
           </div>
@@ -202,12 +202,12 @@ function CF({ label, name, type = "text", required, error, placeholder }: {
 }) {
   return (
     <div>
-      <label className="block text-xs font-medium text-[#1e3323] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+      <label className="block text-xs font-medium text-[#7A000D] tracking-wide mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
         {label} {required && <span className="text-[#c4a86b]">*</span>}
       </label>
       <input
         type={type} name={name} placeholder={placeholder}
-        className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${error ? "border-red-400" : "border-[#ede7db]"}`}
+        className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] focus:outline-none focus:ring-2 focus:ring-[#c4a86b] transition-colors placeholder:text-[#6b6b5e]/50 ${error ? "border-red-400" : "border-[#ede7db]"}`}
         style={{ fontFamily: "Inter, sans-serif" }}
       />
       {error && <p className="text-red-500 text-xs mt-1.5">{error}</p>}

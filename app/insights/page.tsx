@@ -13,7 +13,7 @@ export default function InsightsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             Insights
@@ -40,8 +40,8 @@ export default function InsightsPage() {
                 onClick={() => setActive(topic)}
                 className={`text-xs font-medium px-5 py-2.5 rounded-full border transition-all duration-200 ${
                   active === topic
-                    ? "bg-[#1e3323] border-[#1e3323] text-[#f5f0e8]"
-                    : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#1e3323] hover:text-[#1e3323]"
+                    ? "bg-[#7A000D] border-[#7A000D] text-[#f5f0e8]"
+                    : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#7A000D] hover:text-[#7A000D]"
                 }`}
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
@@ -82,7 +82,7 @@ export default function InsightsPage() {
                     </span>
                   </div>
                   <h2
-                    className="text-xl font-medium text-[#1e3323] mb-3 leading-snug group-hover:text-[#2d4a2d] transition-colors"
+                    className="text-xl font-medium text-[#7A000D] mb-3 leading-snug group-hover:text-[#930010] transition-colors"
                     style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "22px" }}
                   >
                     {article.title}
@@ -102,7 +102,7 @@ export default function InsightsPage() {
                     </span>
                     <Link
                       href={`/insights/${article.id}`}
-                      className="text-xs font-medium text-[#1e3323] border-b border-[#c4a86b] pb-0.5 hover:text-[#c4a86b] transition-colors"
+                      className="text-xs font-medium text-[#7A000D] border-b border-[#c4a86b] pb-0.5 hover:text-[#c4a86b] transition-colors"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
                       Read Article →

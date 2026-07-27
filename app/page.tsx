@@ -185,7 +185,7 @@ export default function SinglePageHome() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
             <div className="lg:col-span-7">
               <h1
-                className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.8rem] font-bold text-[#1e3323] uppercase leading-[0.92] tracking-tight"
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.8rem] font-bold text-[#7A000D] uppercase leading-[0.92] tracking-tight"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 CREATIVE <br />
@@ -195,7 +195,7 @@ export default function SinglePageHome() {
 
             <div className="lg:col-span-5 flex flex-col items-start lg:pl-8">
               <p
-                className="text-base sm:text-lg lg:text-xl text-[#1e3323]/85 font-medium leading-relaxed mb-8 max-w-md"
+                className="text-base sm:text-lg lg:text-xl text-[#7A000D]/85 font-medium leading-relaxed mb-8 max-w-md"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Welcome to CentzMi, a creative studio for brand identity, premium packaging, and visual communications built for lasting impressions.
@@ -203,7 +203,7 @@ export default function SinglePageHome() {
 
               <a
                 href="#quote"
-                className="inline-flex items-center px-8 py-3.5 rounded-full bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider hover:bg-[#2d4a2d] transition-all duration-300 shadow-md"
+                className="inline-flex items-center px-8 py-3.5 rounded-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider hover:bg-[#930010] transition-all duration-300 shadow-md"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Start Your Project
@@ -222,7 +222,7 @@ export default function SinglePageHome() {
                 WHO WE ARE
               </p>
               <h2
-                className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase leading-tight mb-8 tracking-tight"
+                className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase leading-tight mb-8 tracking-tight"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 MORE THAN DESIGN. <br />
@@ -237,7 +237,7 @@ export default function SinglePageHome() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-[#1e3323] rounded-2xl p-8 text-[#f5f0e8]">
+              <div className="bg-[#7A000D] rounded-2xl p-8 text-[#f5f0e8]">
                 <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   OUR MISSION
                 </p>
@@ -250,7 +250,7 @@ export default function SinglePageHome() {
                 <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   OUR VISION
                 </p>
-                <p className="text-xl lg:text-2xl font-medium text-[#1e3323] leading-relaxed uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <p className="text-xl lg:text-2xl font-medium text-[#7A000D] leading-relaxed uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   To become Africa&apos;s preferred creative branding and visual communications company, recognised for innovation, quality, creativity, and exceptional service.
                 </p>
               </div>
@@ -263,18 +263,18 @@ export default function SinglePageHome() {
               <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-3 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 CORE VALUES
               </p>
-              <h3 className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+              <h3 className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 CREATE
               </h3>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {coreValues.map((val) => (
-                <div key={val.title} className="group bg-[#faf7f2] border border-[#ede7db] rounded-xl p-8 hover:bg-[#1e3323] transition-all duration-300">
+                <div key={val.title} className="group bg-[#faf7f2] border border-[#ede7db] rounded-xl p-8 hover:bg-[#7A000D] transition-all duration-300">
                   <span className="text-5xl font-bold text-[#c4a86b] block mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {val.letter}
                   </span>
-                  <h4 className="text-xl font-bold text-[#1e3323] group-hover:text-[#f5f0e8] mb-2 uppercase tracking-wide transition-colors" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                  <h4 className="text-xl font-bold text-[#7A000D] group-hover:text-[#f5f0e8] mb-2 uppercase tracking-wide transition-colors" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {val.title}
                   </h4>
                   <p className="text-sm text-[#6b6b5e] group-hover:text-[#f5f0e8]/70 leading-relaxed transition-colors" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -294,7 +294,7 @@ export default function SinglePageHome() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               WHAT WE DO
             </p>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <h2 className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               SEVEN SPECIALISMS. <br />
               <span className="text-[#c4a86b]">ONE INTEGRATED PARTNER.</span>
             </h2>
@@ -303,7 +303,7 @@ export default function SinglePageHome() {
           <div className="space-y-8">
             {solutions.map((sol, i) => (
               <div key={sol.id} className="grid lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-[#ede7db] group">
-                <div className="lg:col-span-2 bg-[#1e3323] p-10 flex flex-col justify-between">
+                <div className="lg:col-span-2 bg-[#7A000D] p-10 flex flex-col justify-between">
                   <div>
                     <span className="text-4xl mb-6 block">{sol.icon}</span>
                     <h3 className="text-2xl lg:text-3xl font-bold text-[#f5f0e8] uppercase mb-3 tracking-wide" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -315,7 +315,7 @@ export default function SinglePageHome() {
                   </div>
                   <a
                     href="#quote"
-                    className="mt-8 inline-block text-xs tracking-wider uppercase font-bold border border-[#c4a86b]/40 text-[#c4a86b] px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all duration-200 self-start"
+                    className="mt-8 inline-block text-xs tracking-wider uppercase font-bold border border-[#c4a86b]/40 text-[#c4a86b] px-5 py-2.5 rounded-full hover:bg-[#c4a86b] hover:text-[#7A000D] transition-all duration-200 self-start"
                     style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     GET A QUOTE →
@@ -332,7 +332,7 @@ export default function SinglePageHome() {
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-2.5">
                       {sol.subServices.map((sub) => (
-                        <li key={sub} className="flex items-center gap-2 text-xs font-semibold text-[#1e3323] uppercase" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                        <li key={sub} className="flex items-center gap-2 text-xs font-semibold text-[#7A000D] uppercase" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                           <span className="w-1.5 h-1.5 rounded-full bg-[#c4a86b] flex-shrink-0" />
                           {sub}
                         </li>
@@ -349,12 +349,12 @@ export default function SinglePageHome() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               INDUSTRIES WE SERVE
             </p>
-            <h3 className="text-3xl lg:text-5xl font-bold text-[#1e3323] uppercase mb-12 tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <h3 className="text-3xl lg:text-5xl font-bold text-[#7A000D] uppercase mb-12 tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               TRUSTED ACROSS EVERY SECTOR
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
               {industries.map((ind) => (
-                <div key={ind} className="bg-[#f5f0e8] border border-[#ede7db] rounded-lg px-4 py-3 text-center text-xs font-bold uppercase text-[#1e3323] hover:bg-[#1e3323] hover:text-[#f5f0e8] transition-colors cursor-default" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <div key={ind} className="bg-[#f5f0e8] border border-[#ede7db] rounded-lg px-4 py-3 text-center text-xs font-bold uppercase text-[#7A000D] hover:bg-[#7A000D] hover:text-[#f5f0e8] transition-colors cursor-default" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   {ind}
                 </div>
               ))}
@@ -364,7 +364,7 @@ export default function SinglePageHome() {
       </section>
 
       {/* ===== 4. PROCESS SECTION ===== */}
-      <section id="process" className="bg-[#1e3323] py-28 px-6 lg:px-10 scroll-mt-12 text-[#f5f0e8]">
+      <section id="process" className="bg-[#7A000D] py-28 px-6 lg:px-10 scroll-mt-12 text-[#f5f0e8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -378,15 +378,15 @@ export default function SinglePageHome() {
 
           <div className="grid lg:grid-cols-5 gap-6">
             {processSteps.map((step) => (
-              <div key={step.step} className="bg-[#243824] border border-[#f5f0e8]/10 rounded-xl p-8 flex flex-col justify-between hover:border-[#c4a86b]/40 transition-colors">
+              <div key={step.step} className="bg-[#faf7f2] border border-[#ede7db] rounded-xl p-8 flex flex-col justify-between hover:border-[#c4a86b] transition-all duration-300 shadow-md">
                 <div>
                   <span className="text-4xl font-bold text-[#c4a86b] block mb-4" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {step.step}
                   </span>
-                  <h3 className="text-xl font-bold uppercase mb-3 text-[#f5f0e8] tracking-wide" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                  <h3 className="text-xl font-bold uppercase mb-3 text-[#7A000D] tracking-wide" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {step.title}
                   </h3>
-                  <p className="text-xs text-[#f5f0e8]/75 leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                  <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {step.description}
                   </p>
                 </div>
@@ -403,7 +403,7 @@ export default function SinglePageHome() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-3 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               OUR WORK
             </p>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <h2 className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               PROJECTS THAT SPEAK FOR THEMSELVES.
             </h2>
           </div>
@@ -419,8 +419,8 @@ export default function SinglePageHome() {
                 }}
                 className={`text-xs font-bold uppercase px-5 py-2.5 rounded-full border transition-all duration-200 ${
                   activeCategory === cat
-                    ? "bg-[#1e3323] border-[#1e3323] text-[#f5f0e8]"
-                    : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#1e3323] hover:text-[#1e3323]"
+                    ? "bg-[#7A000D] border-[#FF0019] text-[#f5f0e8]"
+                    : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#FF0019] hover:text-[#7A000D]"
                 }`}
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
@@ -444,7 +444,7 @@ export default function SinglePageHome() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3323]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FF0019]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <p className="text-[#f5f0e8] text-sm font-bold uppercase" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                       {item.title}
@@ -458,7 +458,7 @@ export default function SinglePageHome() {
                   <p className="text-[10px] text-[#c4a86b] font-bold tracking-wider uppercase mb-1" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {item.category}
                   </p>
-                  <p className="text-sm text-[#1e3323] font-bold uppercase leading-snug" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                  <p className="text-sm text-[#7A000D] font-bold uppercase leading-snug" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     {item.title}
                   </p>
                 </div>
@@ -471,7 +471,7 @@ export default function SinglePageHome() {
             <div className="text-center mt-6">
               <button
                 onClick={() => setIsPortfolioExpanded((prev) => !prev)}
-                className="inline-flex items-center gap-2 bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-full hover:bg-[#2d4a2d] transition-all duration-300 shadow-md"
+                className="inline-flex items-center gap-2 bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-full hover:bg-[#930010] transition-all duration-300 shadow-md"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 {isPortfolioExpanded
@@ -517,21 +517,21 @@ export default function SinglePageHome() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={handlePrev}
-                    className="w-8 h-8 rounded-full bg-[#1e3323]/10 text-[#1e3323] hover:bg-[#1e3323] hover:text-[#f5f0e8] flex items-center justify-center text-sm transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#7A000D]/10 text-[#7A000D] hover:bg-[#7A000D] hover:text-[#f5f0e8] flex items-center justify-center text-sm transition-colors"
                     title="Previous Project (Left Arrow)"
                   >
                     ←
                   </button>
                   <button
                     onClick={handleNext}
-                    className="w-8 h-8 rounded-full bg-[#1e3323]/10 text-[#1e3323] hover:bg-[#1e3323] hover:text-[#f5f0e8] flex items-center justify-center text-sm transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#7A000D]/10 text-[#7A000D] hover:bg-[#7A000D] hover:text-[#f5f0e8] flex items-center justify-center text-sm transition-colors"
                     title="Next Project (Right Arrow)"
                   >
                     →
                   </button>
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="w-8 h-8 rounded-full bg-[#1e3323] text-[#f5f0e8] flex items-center justify-center text-xs hover:bg-[#2d4a2d] transition-colors ml-2"
+                    className="w-8 h-8 rounded-full bg-[#7A000D] text-[#f5f0e8] flex items-center justify-center text-xs hover:bg-[#930010] transition-colors ml-2"
                     aria-label="Close modal"
                   >
                     ✕
@@ -540,7 +540,7 @@ export default function SinglePageHome() {
               </div>
 
               {/* Image Container with Floating Prev/Next Arrows */}
-              <div className="relative aspect-[16/9] w-full bg-[#1e3323] group">
+              <div className="relative aspect-[16/9] w-full bg-[#7A000D] group">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -550,7 +550,7 @@ export default function SinglePageHome() {
 
                 <button
                   onClick={handlePrev}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/50 text-white backdrop-blur-sm flex items-center justify-center text-xl hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all shadow-lg"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/50 text-white backdrop-blur-sm flex items-center justify-center text-xl hover:bg-[#c4a86b] hover:text-[#7A000D] transition-all shadow-lg"
                   aria-label="Previous project"
                 >
                   ‹
@@ -558,7 +558,7 @@ export default function SinglePageHome() {
 
                 <button
                   onClick={handleNext}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/50 text-white backdrop-blur-sm flex items-center justify-center text-xl hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all shadow-lg"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/50 text-white backdrop-blur-sm flex items-center justify-center text-xl hover:bg-[#c4a86b] hover:text-[#7A000D] transition-all shadow-lg"
                   aria-label="Next project"
                 >
                   ›
@@ -573,7 +573,7 @@ export default function SinglePageHome() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold uppercase text-[#1e3323] mb-4 tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <h3 className="text-2xl font-bold uppercase text-[#7A000D] mb-4 tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   {selectedProject.title}
                 </h3>
 
@@ -585,14 +585,14 @@ export default function SinglePageHome() {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={handlePrev}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#ede7db] text-xs font-bold uppercase text-[#1e3323] hover:border-[#1e3323] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#ede7db] text-xs font-bold uppercase text-[#7A000D] hover:border-[#FF0019] transition-colors"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       ← PREVIOUS
                     </button>
                     <button
                       onClick={handleNext}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#ede7db] text-xs font-bold uppercase text-[#1e3323] hover:border-[#1e3323] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#ede7db] text-xs font-bold uppercase text-[#7A000D] hover:border-[#FF0019] transition-colors"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       NEXT →
@@ -602,7 +602,7 @@ export default function SinglePageHome() {
                   <a
                     href="#quote"
                     onClick={() => setSelectedProject(null)}
-                    className="bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase px-6 py-2.5 rounded-full hover:bg-[#2d4a2d] transition-colors shadow-sm"
+                    className="bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase px-6 py-2.5 rounded-full hover:bg-[#930010] transition-colors shadow-sm"
                     style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     REQUEST SIMILAR PROJECT
@@ -625,7 +625,7 @@ export default function SinglePageHome() {
               TRANSPARENT PRICING
             </p>
             <h2
-              className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight"
+              className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight"
               style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
               WEBSITE DEVELOPMENT <span className="text-[#c4a86b]">PRICING GUIDE.</span>
@@ -645,7 +645,7 @@ export default function SinglePageHome() {
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <span
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#1e3323]/10 text-[#1e3323]"
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#7A000D]/10 text-[#7A000D]"
                     style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     INDIVIDUAL / PERSONAL
@@ -656,7 +656,7 @@ export default function SinglePageHome() {
                 </div>
 
                 <h3
-                  className="text-2xl font-bold text-[#1e3323] uppercase mb-2"
+                  className="text-2xl font-bold text-[#7A000D] uppercase mb-2"
                   style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
                   Personal Client Rate
@@ -672,7 +672,7 @@ export default function SinglePageHome() {
                 <div className="bg-[#f5f0e8] border border-[#ede7db] p-6 rounded-2xl mb-8">
                   <div className="flex items-baseline gap-2">
                     <span
-                      className="text-4xl lg:text-5xl font-extrabold text-[#1e3323]"
+                      className="text-4xl lg:text-5xl font-extrabold text-[#7A000D]"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       ₦400,000
@@ -686,14 +686,14 @@ export default function SinglePageHome() {
                   </div>
                   <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
                     <span className="line-through decoration-[#c4a86b] decoration-2">Itemized Subtotal: ₦500,000</span>
-                    <span className="bg-[#c4a86b]/15 text-[#1e3323] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
+                    <span className="bg-[#c4a86b]/15 text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
                   </div>
                 </div>
 
                 {/* Line Items Table / List */}
                 <div className="space-y-4 mb-8">
                   <p
-                    className="text-xs font-bold uppercase tracking-wider text-[#1e3323] border-b border-[#ede7db] pb-2"
+                    className="text-xs font-bold uppercase tracking-wider text-[#7A000D] border-b border-[#ede7db] pb-2"
                     style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     ITEMIZED BREAKDOWN
@@ -701,41 +701,41 @@ export default function SinglePageHome() {
                   
                   <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
                     <div>
-                      <p className="font-bold text-[#1e3323]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
                       <p className="text-[11px] text-[#6b6b5e]">Next.js build, responsive layout, page structure</p>
                     </div>
-                    <span className="font-bold text-[#1e3323] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦220,000</span>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦220,000</span>
                   </div>
 
                   <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
                     <div>
-                      <p className="font-bold text-[#1e3323]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>UI/UX Design</p>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>UI/UX Design</p>
                       <p className="text-[11px] text-[#6b6b5e]">Template adaptation, brand color & typography integration</p>
                     </div>
-                    <span className="font-bold text-[#1e3323] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦120,000</span>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦120,000</span>
                   </div>
 
                   <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
                     <div>
-                      <p className="font-bold text-[#1e3323]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Contact Form Setup</p>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Contact Form Setup</p>
                       <p className="text-[11px] text-[#6b6b5e]">Nodemailer integration, delivery testing & fix</p>
                     </div>
-                    <span className="font-bold text-[#1e3323] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦90,000</span>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦90,000</span>
                   </div>
 
                   <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
                     <div>
-                      <p className="font-bold text-[#1e3323]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Content & Asset Integration</p>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Content & Asset Integration</p>
                       <p className="text-[11px] text-[#6b6b5e]">Logos, partner marquee, copy placement</p>
                     </div>
-                    <span className="font-bold text-[#1e3323] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦70,000</span>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦70,000</span>
                   </div>
                 </div>
               </div>
 
               <a
                 href="#quote"
-                className="w-full bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#2d4a2d] transition-colors shadow-md block"
+                className="w-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#930010] transition-colors shadow-md block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 REQUEST PERSONAL PLAN — ₦400,000
@@ -743,14 +743,14 @@ export default function SinglePageHome() {
             </div>
 
             {/* Corporate / Company Client Rate */}
-            <div className="bg-[#1e3323] text-[#f5f0e8] border border-[#c4a86b]/40 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="bg-[#7A000D] text-[#f5f0e8] border border-[#c4a86b]/40 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden">
               {/* Gold Top Accent Line */}
               <div className="absolute top-0 left-0 right-0 h-2 bg-[#c4a86b]" />
 
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4 pt-2">
                   <span
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#c4a86b] text-[#1e3323]"
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#c4a86b] text-[#7A000D]"
                     style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   >
                     CORPORATE / COMPANY
@@ -774,10 +774,10 @@ export default function SinglePageHome() {
                 </p>
 
                 {/* Price Header */}
-                <div className="bg-[#243824] border border-[#c4a86b]/30 p-6 rounded-2xl mb-8">
+                <div className="bg-[#faf7f2] border border-[#ede7db] p-6 rounded-2xl mb-8">
                   <div className="flex items-baseline gap-2">
                     <span
-                      className="text-4xl lg:text-5xl font-extrabold text-[#f5f0e8]"
+                      className="text-4xl lg:text-5xl font-extrabold text-[#7A000D]"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       ₦750,000
@@ -789,9 +789,9 @@ export default function SinglePageHome() {
                       PACKAGE RATE
                     </span>
                   </div>
-                  <div className="mt-2 text-xs text-[#ede7db]/80 font-medium flex items-center gap-2">
+                  <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
                     <span className="line-through decoration-[#c4a86b] decoration-2">Itemized Subtotal: ₦800,000</span>
-                    <span className="bg-[#c4a86b] text-[#1e3323] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦50k</span>
+                    <span className="bg-[#c4a86b] text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦50k</span>
                   </div>
                 </div>
 
@@ -804,7 +804,7 @@ export default function SinglePageHome() {
                     ITEMIZED BREAKDOWN
                   </p>
 
-                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#2d4a2d] text-xs">
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
                     <div>
                       <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
                       <p className="text-[11px] text-[#ede7db]/70">Next.js build, responsive layout, page structure</p>
@@ -812,7 +812,7 @@ export default function SinglePageHome() {
                     <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦350,000</span>
                   </div>
 
-                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#2d4a2d] text-xs">
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
                     <div>
                       <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>UI/UX Design</p>
                       <p className="text-[11px] text-[#ede7db]/70">Template adaptation, brand color & typography integration</p>
@@ -820,7 +820,7 @@ export default function SinglePageHome() {
                     <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦200,000</span>
                   </div>
 
-                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#2d4a2d] text-xs">
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
                     <div>
                       <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Contact Form Setup</p>
                       <p className="text-[11px] text-[#ede7db]/70">Nodemailer integration, delivery testing & fix</p>
@@ -828,7 +828,7 @@ export default function SinglePageHome() {
                     <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦150,000</span>
                   </div>
 
-                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#2d4a2d] text-xs">
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
                     <div>
                       <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Content & Asset Integration</p>
                       <p className="text-[11px] text-[#ede7db]/70">Logos, partner marquee, copy placement</p>
@@ -840,7 +840,7 @@ export default function SinglePageHome() {
 
               <a
                 href="#quote"
-                className="w-full bg-[#c4a86b] text-[#1e3323] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#d4bc8b] transition-colors shadow-lg block"
+                className="w-full bg-[#c4a86b] text-[#7A000D] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#d4bc8b] transition-colors shadow-lg block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 REQUEST CORPORATE PLAN — ₦750,000
@@ -858,7 +858,7 @@ export default function SinglePageHome() {
                 TRANSPARENCY & VALUE
               </p>
               <h3
-                className="text-2xl lg:text-3xl font-bold text-[#1e3323] uppercase"
+                className="text-2xl lg:text-3xl font-bold text-[#7A000D] uppercase"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 WHY THE RATE DIFFERENCE?
@@ -867,10 +867,10 @@ export default function SinglePageHome() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-[#f5f0e8] p-6 rounded-2xl border border-[#ede7db]">
-                <div className="w-10 h-10 rounded-full bg-[#1e3323] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4">
+                <div className="w-10 h-10 rounded-full bg-[#7A000D] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4">
                   01
                 </div>
-                <h4 className="text-sm font-bold text-[#1e3323] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <h4 className="text-sm font-bold text-[#7A000D] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   Budget Source
                 </h4>
                 <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -879,10 +879,10 @@ export default function SinglePageHome() {
               </div>
 
               <div className="bg-[#f5f0e8] p-6 rounded-2xl border border-[#ede7db]">
-                <div className="w-10 h-10 rounded-full bg-[#1e3323] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
+                <div className="w-10 h-10 rounded-full bg-[#7A000D] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
                   02
                 </div>
-                <h4 className="text-sm font-bold text-[#1e3323] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <h4 className="text-sm font-bold text-[#7A000D] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   Invoicing Needs
                 </h4>
                 <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -891,10 +891,10 @@ export default function SinglePageHome() {
               </div>
 
               <div className="bg-[#f5f0e8] p-6 rounded-2xl border border-[#ede7db]">
-                <div className="w-10 h-10 rounded-full bg-[#1e3323] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
+                <div className="w-10 h-10 rounded-full bg-[#7A000D] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
                   03
                 </div>
-                <h4 className="text-sm font-bold text-[#1e3323] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <h4 className="text-sm font-bold text-[#7A000D] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   Expectations
                 </h4>
                 <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -903,10 +903,10 @@ export default function SinglePageHome() {
               </div>
 
               <div className="bg-[#f5f0e8] p-6 rounded-2xl border border-[#ede7db]">
-                <div className="w-10 h-10 rounded-full bg-[#1e3323] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
+                <div className="w-10 h-10 rounded-full bg-[#7A000D] text-[#c4a86b] flex items-center justify-center font-bold text-sm mb-4 font-sans">
                   04
                 </div>
-                <h4 className="text-sm font-bold text-[#1e3323] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <h4 className="text-sm font-bold text-[#7A000D] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   Negotiation Room
                 </h4>
                 <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -917,7 +917,7 @@ export default function SinglePageHome() {
           </div>
 
           {/* Notes & Terms Callout */}
-          <div className="bg-[#1e3323] text-[#f5f0e8] rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-[#c4a86b]/30">
+          <div className="bg-[#7A000D] text-[#f5f0e8] rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-[#c4a86b]/30">
             <div className="space-y-2">
               <p
                 className="text-xs tracking-[0.2em] uppercase text-[#c4a86b] font-bold"
@@ -933,7 +933,7 @@ export default function SinglePageHome() {
             </div>
             <a
               href="#quote"
-              className="shrink-0 bg-[#c4a86b] text-[#1e3323] text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#d4bc8b] transition-colors"
+              className="shrink-0 bg-[#c4a86b] text-[#7A000D] text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#d4bc8b] transition-colors"
               style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
               GET A CUSTOM QUOTE
@@ -949,7 +949,7 @@ export default function SinglePageHome() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               GET STARTED
             </p>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <h2 className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               REQUEST A CUSTOM QUOTE.
             </h2>
             <p className="text-sm text-[#6b6b5e] mt-4 font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -959,10 +959,10 @@ export default function SinglePageHome() {
 
           {quoteStatus === "success" ? (
             <div className="text-center py-20 bg-[#f5f0e8] rounded-2xl border border-[#ede7db]">
-              <div className="w-16 h-16 rounded-full bg-[#1e3323] flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 rounded-full bg-[#7A000D] flex items-center justify-center mx-auto mb-6">
                 <span className="text-[#c4a86b] text-2xl">✓</span>
               </div>
-              <h3 className="text-3xl font-bold uppercase text-[#1e3323] mb-3" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+              <h3 className="text-3xl font-bold uppercase text-[#7A000D] mb-3" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 REQUEST RECEIVED
               </h3>
               <p className="text-sm text-[#6b6b5e] max-w-sm mx-auto leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -986,12 +986,12 @@ export default function SinglePageHome() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   SERVICE REQUIRED <span className="text-[#c4a86b]">*</span>
                 </label>
                 <select
                   name="service"
-                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] font-medium focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${quoteErrors.service ? "border-red-400" : "border-[#ede7db]"}`}
+                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] font-medium focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${quoteErrors.service ? "border-red-400" : "border-[#ede7db]"}`}
                   style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                   defaultValue=""
                 >
@@ -1004,14 +1004,14 @@ export default function SinglePageHome() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   PROJECT DESCRIPTION <span className="text-[#c4a86b]">*</span>
                 </label>
                 <textarea
                   name="description"
                   rows={4}
                   placeholder="Describe your project, timeline requirements, and deliverables…"
-                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${quoteErrors.description ? "border-red-400" : "border-[#ede7db]"}`}
+                  className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${quoteErrors.description ? "border-red-400" : "border-[#ede7db]"}`}
                   style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 />
                 {quoteErrors.description && <p className="text-red-500 text-xs mt-1 font-medium">{quoteErrors.description}</p>}
@@ -1020,10 +1020,10 @@ export default function SinglePageHome() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <InputField label="Estimated Quantity" name="quantity" placeholder="e.g. 500 units" />
                 <div>
-                  <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                  <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                     BUDGET RANGE
                   </label>
-                  <select name="budget" className="w-full bg-[#f5f0e8] border border-[#ede7db] rounded-xl px-4 py-3.5 text-sm text-[#1e3323] font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }} defaultValue="">
+                  <select name="budget" className="w-full bg-[#f5f0e8] border border-[#ede7db] rounded-xl px-4 py-3.5 text-sm text-[#7A000D] font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }} defaultValue="">
                     <option value="" disabled>Select range…</option>
                     {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
                   </select>
@@ -1031,10 +1031,10 @@ export default function SinglePageHome() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   PREFERRED TIMELINE <span className="text-[#c4a86b]">*</span>
                 </label>
-                <select name="timeline" className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#1e3323] font-medium ${quoteErrors.timeline ? "border-red-400" : "border-[#ede7db]"}`} style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }} defaultValue="">
+                <select name="timeline" className={`w-full bg-[#f5f0e8] border rounded-xl px-4 py-3.5 text-sm text-[#7A000D] font-medium ${quoteErrors.timeline ? "border-red-400" : "border-[#ede7db]"}`} style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }} defaultValue="">
                   <option value="" disabled>Select timeline…</option>
                   {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
@@ -1043,7 +1043,7 @@ export default function SinglePageHome() {
 
               {/* Reference Files */}
               <div>
-                <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   REFERENCE FILES <span className="text-[#6b6b5e] font-normal font-sans">(OPTIONAL — LOGOS, BRIEFS)</span>
                 </label>
                 <div className="border-2 border-dashed border-[#ede7db] rounded-xl p-8 text-center bg-[#f5f0e8] hover:border-[#c4a86b] transition-colors cursor-pointer">
@@ -1063,7 +1063,7 @@ export default function SinglePageHome() {
                   />
                   <label htmlFor="single-file-upload" className="cursor-pointer block">
                     <span className="text-3xl block mb-2">📎</span>
-                    <span id="single-file-label" className="text-sm font-bold uppercase text-[#1e3323]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                    <span id="single-file-label" className="text-sm font-bold uppercase text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                       CLICK OR DRAG FILES TO UPLOAD
                     </span>
                     <span className="block text-xs text-[#6b6b5e]/70 mt-1 font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
@@ -1076,7 +1076,7 @@ export default function SinglePageHome() {
               <button
                 type="submit"
                 disabled={quoteStatus === "submitting"}
-                className="w-full bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full hover:bg-[#2d4a2d] transition-colors disabled:opacity-60 shadow-md"
+                className="w-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full hover:bg-[#930010] transition-colors disabled:opacity-60 shadow-md"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 {quoteStatus === "submitting" ? "SENDING REQUEST…" : "SUBMIT QUOTE REQUEST"}
@@ -1093,7 +1093,7 @@ export default function SinglePageHome() {
             <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               CONTACT US
             </p>
-            <h2 className="text-4xl lg:text-6xl font-bold text-[#1e3323] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <h2 className="text-4xl lg:text-6xl font-bold text-[#7A000D] uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               GET IN TOUCH. <span className="text-[#c4a86b]">LET&apos;S TALK.</span>
             </h2>
           </div>
@@ -1108,7 +1108,7 @@ export default function SinglePageHome() {
               </div>
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-2 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>DIRECT CONTACT</p>
-                <p className="text-sm text-[#1e3323] font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                <p className="text-sm text-[#7A000D] font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                   <a href="tel:+2348037529545" className="hover:text-[#c4a86b] transition-colors">+234 803 752 9545</a> · hello@centzmi.com
                 </p>
               </div>
@@ -1136,7 +1136,7 @@ export default function SinglePageHome() {
               {contactStatus === "success" ? (
                 <div className="bg-[#faf7f2] p-10 rounded-2xl border border-[#ede7db] text-center">
                   <span className="text-3xl block mb-3">✓</span>
-                  <h3 className="text-2xl font-bold uppercase text-[#1e3323] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>MESSAGE SENT</h3>
+                  <h3 className="text-2xl font-bold uppercase text-[#7A000D] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>MESSAGE SENT</h3>
                   <p className="text-sm text-[#6b6b5e] font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>We&apos;ll be in touch shortly!</p>
                 </div>
               ) : (
@@ -1154,13 +1154,13 @@ export default function SinglePageHome() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-[#1e3323] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                    <label className="block text-sm font-medium text-[#7A000D] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                       Message
                     </label>
                     <textarea
                       name="message"
                       rows={3}
-                      className={`w-full bg-transparent border-b text-sm text-[#1e3323] font-medium focus:outline-none focus:border-[#1e3323] py-2 resize-none transition-colors ${contactErrors.message ? "border-red-400" : "border-[#1e3323]/30"}`}
+                      className={`w-full bg-transparent border-b text-sm text-[#7A000D] font-medium focus:outline-none focus:border-[#FF0019] py-2 resize-none transition-colors ${contactErrors.message ? "border-red-400" : "border-[#FF0019]/30"}`}
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     />
                     {contactErrors.message && <p className="text-red-500 text-xs mt-1 font-medium">{contactErrors.message}</p>}
@@ -1171,7 +1171,7 @@ export default function SinglePageHome() {
                     <button
                       type="submit"
                       disabled={contactStatus === "submitting"}
-                      className="px-10 py-3.5 bg-[#1e3323] text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-[#2d4a2d] transition-all duration-200 disabled:opacity-60 shadow-md"
+                      className="px-10 py-3.5 bg-[#7A000D] text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-[#930010] transition-all duration-200 disabled:opacity-60 shadow-md"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       {contactStatus === "submitting" ? "Submitting…" : "Submit"}
@@ -1196,8 +1196,8 @@ export default function SinglePageHome() {
               title="Office location map"
             />
             {/* Overlay to intercept clicks and show subtle interactive hover state */}
-            <div className="absolute inset-0 bg-[#1e3323]/0 group-hover:bg-[#1e3323]/5 transition-colors duration-200 flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 bg-[#1e3323] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+            <div className="absolute inset-0 bg-[#7A000D]/0 group-hover:bg-[#7A000D]/5 transition-colors duration-200 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 bg-[#7A000D] text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform translate-y-2 group-hover:translate-y-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
                 Open in Google Maps ↗
               </span>
             </div>
@@ -1211,14 +1211,14 @@ export default function SinglePageHome() {
 function InputField({ label, name, type = "text", required, error, placeholder }: { label: string; name: string; type?: string; required?: boolean; error?: string; placeholder?: string; }) {
   return (
     <div>
-      <label className="block text-xs font-bold uppercase text-[#1e3323] tracking-wider mb-1.5" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+      <label className="block text-xs font-bold uppercase text-[#7A000D] tracking-wider mb-1.5" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
         {label} {required && <span className="text-[#c4a86b]">*</span>}
       </label>
       <input
         type={type}
         name={name}
         placeholder={placeholder}
-        className={`w-full bg-[#faf7f2] border rounded-xl px-4 py-3 text-sm text-[#1e3323] font-medium focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${error ? "border-red-400" : "border-[#ede7db]"}`}
+        className={`w-full bg-[#faf7f2] border rounded-xl px-4 py-3 text-sm text-[#7A000D] font-medium focus:outline-none focus:ring-2 focus:ring-[#c4a86b] ${error ? "border-red-400" : "border-[#ede7db]"}`}
         style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
       />
       {error && <p className="text-red-500 text-xs mt-1 font-medium">{error}</p>}
@@ -1229,14 +1229,14 @@ function InputField({ label, name, type = "text", required, error, placeholder }
 function UnderlineInputField({ label, name, type = "text", required, error }: { label: string; name: string; type?: string; required?: boolean; error?: string; }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-[#1e3323] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+      <label className="block text-sm font-medium text-[#7A000D] mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
         {label}
       </label>
       <input
         type={type}
         name={name}
         required={required}
-        className={`w-full bg-transparent border-b text-sm text-[#1e3323] font-medium focus:outline-none focus:border-[#1e3323] py-2 transition-colors ${error ? "border-red-400" : "border-[#1e3323]/30"}`}
+        className={`w-full bg-transparent border-b text-sm text-[#7A000D] font-medium focus:outline-none focus:border-[#FF0019] py-2 transition-colors ${error ? "border-red-400" : "border-[#FF0019]/30"}`}
         style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
       />
       {error && <p className="text-red-500 text-xs mt-1 font-medium">{error}</p>}

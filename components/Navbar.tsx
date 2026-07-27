@@ -88,7 +88,7 @@ export default function Navbar() {
                 className={`text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
                   activeSection === link.href
                     ? "text-[#c4a86b]"
-                    : "text-[#1e3323] hover:text-[#c4a86b]"
+                    : "text-[#7A000D] hover:text-[#c4a86b]"
                 }`}
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
@@ -103,7 +103,7 @@ export default function Navbar() {
               <a
                 href="#quote"
                 onClick={(e) => handleNavClick(e, "#quote")}
-                className="bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-[#2d4a2d] transition-all duration-300 shadow-sm block"
+                className="bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-[#930010] transition-all duration-300 shadow-sm block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Request a Quote
@@ -117,17 +117,17 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <span
-                className={`block w-5 h-0.5 bg-[#1e3323] transition-all duration-300 ${
+                className={`block w-5 h-0.5 bg-[#7A000D] transition-all duration-300 ${
                   mobileOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#1e3323] transition-all duration-300 ${
+                className={`block w-5 h-0.5 bg-[#7A000D] transition-all duration-300 ${
                   mobileOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#1e3323] transition-all duration-300 ${
+                className={`block w-5 h-0.5 bg-[#7A000D] transition-all duration-300 ${
                   mobileOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
@@ -145,7 +145,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`text-xs font-bold uppercase tracking-wider py-1.5 border-b border-[#ede7db]/40 ${
-                    activeSection === link.href ? "text-[#c4a86b]" : "text-[#1e3323]"
+                    activeSection === link.href ? "text-[#c4a86b]" : "text-[#7A000D]"
                   }`}
                   style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                 >
@@ -155,7 +155,7 @@ export default function Navbar() {
               <a
                 href="#quote"
                 onClick={(e) => handleNavClick(e, "#quote")}
-                className="mt-2 text-center bg-[#1e3323] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-sm block"
+                className="mt-2 text-center bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full shadow-sm block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 Request a Quote

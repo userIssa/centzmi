@@ -20,7 +20,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             About CentzMi
@@ -43,7 +43,7 @@ export default function AboutPage() {
               Who We Are
             </p>
             <h2
-              className="text-4xl lg:text-5xl font-light text-[#1e3323] mb-8 leading-tight"
+              className="text-4xl lg:text-5xl font-light text-[#7A000D] mb-8 leading-tight"
               style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
             >
               More Than a Branding Agency.
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 complete brand experiences from initial concept through to final
                 installation.
               </p>
-              <p className="italic text-[#1e3323] border-l-2 border-[#c4a86b] pl-5">
+              <p className="italic text-[#7A000D] border-l-2 border-[#c4a86b] pl-5">
                 "Every Brand Tells a Story." At CentzMi, we believe every interaction
                 with a brand shapes perception — and we&apos;re here to make sure yours
                 shapes the right one.
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
           {/* Mission & Vision */}
           <div className="space-y-8">
-            <div className="bg-[#1e3323] rounded-2xl p-8 text-[#f5f0e8]">
+            <div className="bg-[#7A000D] rounded-2xl p-8 text-[#f5f0e8]">
               <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
                 Our Mission
               </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 Our Vision
               </p>
               <p
-                className="text-xl lg:text-2xl font-light text-[#1e3323] leading-relaxed"
+                className="text-xl lg:text-2xl font-light text-[#7A000D] leading-relaxed"
                 style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
               >
                 To become Africa&apos;s preferred creative branding and visual
@@ -113,7 +113,7 @@ export default function AboutPage() {
               Core Values
             </p>
             <h2
-              className="text-4xl lg:text-6xl font-light text-[#1e3323] tracking-wide"
+              className="text-4xl lg:text-6xl font-light text-[#7A000D] tracking-wide"
               style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
             >
               CREATE
@@ -127,7 +127,7 @@ export default function AboutPage() {
             {coreValues.map((val) => (
               <div
                 key={val.title}
-                className="group bg-[#f5f0e8] border border-[#ede7db] rounded-xl p-8 hover:bg-[#1e3323] transition-all duration-300"
+                className="group bg-[#f5f0e8] border border-[#ede7db] rounded-xl p-8 hover:bg-[#7A000D] transition-all duration-300"
               >
                 <span
                   className="text-6xl font-light text-[#c4a86b] group-hover:text-[#c4a86b] block mb-2"
@@ -136,7 +136,7 @@ export default function AboutPage() {
                   {val.letter}
                 </span>
                 <h3
-                  className="text-xl font-medium text-[#1e3323] group-hover:text-[#f5f0e8] mb-3 transition-colors"
+                  className="text-xl font-medium text-[#7A000D] group-hover:text-[#f5f0e8] mb-3 transition-colors"
                   style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
                 >
                   {val.title}
@@ -154,7 +154,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why CentzMi quick strip */}
-      <section className="bg-[#1e3323] py-20 px-6 lg:px-10">
+      <section className="bg-[#7A000D] py-20 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {whyChoose.map((item) => (
             <div key={item.title} className="pl-5 border-l border-[#c4a86b]/40">

@@ -12,7 +12,7 @@ export default function ProcessPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             How We Work
@@ -43,7 +43,7 @@ export default function ProcessPage() {
             <div className="absolute left-0 right-0 h-px bg-[#ede7db] top-1/2" />
             {processSteps.map((step, i) => (
               <div key={step.step} className="flex-1 flex flex-col items-center relative z-10">
-                <div className="w-12 h-12 rounded-full bg-[#1e3323] border-4 border-[#faf7f2] flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-full bg-[#7A000D] border-4 border-[#faf7f2] flex items-center justify-center mb-3">
                   <span
                     className="text-[#c4a86b] text-xs font-bold"
                     style={{ fontFamily: "Inter, sans-serif" }}
@@ -52,7 +52,7 @@ export default function ProcessPage() {
                   </span>
                 </div>
                 <p
-                  className="text-sm font-medium text-[#1e3323]"
+                  className="text-sm font-medium text-[#7A000D]"
                   style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "18px" }}
                 >
                   {step.title}
@@ -72,7 +72,7 @@ export default function ProcessPage() {
                 className={`flex flex-col lg:flex-row gap-8 p-8 rounded-2xl border transition-all duration-200 hover:shadow-md ${
                   i % 2 === 0
                     ? "bg-[#f5f0e8] border-[#ede7db]"
-                    : "bg-[#1e3323] border-[#1e3323]"
+                    : "bg-[#7A000D] border-[#7A000D]"
                 }`}
               >
                 <div className="flex-shrink-0">
@@ -85,7 +85,7 @@ export default function ProcessPage() {
                 </div>
                 <div>
                   <h2
-                    className={`text-3xl font-light mb-4 ${i % 2 === 0 ? "text-[#1e3323]" : "text-[#f5f0e8]"}`}
+                    className={`text-3xl font-light mb-4 ${i % 2 === 0 ? "text-[#7A000D]" : "text-[#f5f0e8]"}`}
                     style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
                   >
                     {step.title}
@@ -107,7 +107,7 @@ export default function ProcessPage() {
       <section className="bg-[#f5f0e8] py-24 px-6 lg:px-10 text-center">
         <div className="max-w-2xl mx-auto">
           <h2
-            className="text-4xl lg:text-5xl font-light text-[#1e3323] mb-6"
+            className="text-4xl lg:text-5xl font-light text-[#7A000D] mb-6"
             style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
           >
             Ready to Start the Process?
@@ -120,7 +120,7 @@ export default function ProcessPage() {
           </p>
           <Link
             href="/quote"
-            className="inline-block bg-[#1e3323] text-[#f5f0e8] text-sm font-medium px-8 py-4 rounded-full hover:bg-[#2d4a2d] transition-colors"
+            className="inline-block bg-[#7A000D] text-[#f5f0e8] text-sm font-medium px-8 py-4 rounded-full hover:bg-[#930010] transition-colors"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Request a Quote

@@ -58,7 +58,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} ${spaceGrotesk.variable}`}
     >
-      <body className="bg-[#faf7f2] text-[#1e3323] antialiased">
+      <body className="bg-[#faf7f2] text-[#7A000D] antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

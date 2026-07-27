@@ -12,7 +12,7 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1e3323] pt-40 pb-24 px-6 lg:px-10">
+      <section className="bg-[#7A000D] pt-40 pb-24 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
             What We Do
@@ -47,7 +47,7 @@ export default function SolutionsPage() {
               }`}
             >
               {/* Left — label + title */}
-              <div className="lg:col-span-2 bg-[#1e3323] p-10 flex flex-col justify-between">
+              <div className="lg:col-span-2 bg-[#7A000D] p-10 flex flex-col justify-between">
                 <div>
                   <span className="text-4xl mb-6 block">{sol.icon}</span>
                   <h2
@@ -65,7 +65,7 @@ export default function SolutionsPage() {
                 </div>
                 <Link
                   href="/quote"
-                  className="mt-8 inline-block text-xs tracking-wider uppercase border border-[#c4a86b]/40 text-[#c4a86b] px-5 py-3 rounded-full hover:bg-[#c4a86b] hover:text-[#1e3323] transition-all duration-200 self-start"
+                  className="mt-8 inline-block text-xs tracking-wider uppercase border border-[#c4a86b]/40 text-[#c4a86b] px-5 py-3 rounded-full hover:bg-[#c4a86b] hover:text-[#7A000D] transition-all duration-200 self-start"
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
                   Get a Quote →
@@ -91,7 +91,7 @@ export default function SolutionsPage() {
                     {sol.subServices.map((sub) => (
                       <li
                         key={sub}
-                        className="flex items-center gap-2 text-sm text-[#1e3323]"
+                        className="flex items-center gap-2 text-sm text-[#7A000D]"
                         style={{ fontFamily: "Inter, sans-serif" }}
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#c4a86b] flex-shrink-0" />
@@ -107,7 +107,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1e3323] py-24 px-6 lg:px-10 text-center">
+      <section className="bg-[#7A000D] py-24 px-6 lg:px-10 text-center">
         <div className="max-w-2xl mx-auto">
           <h2
             className="text-4xl lg:text-5xl font-light text-[#f5f0e8] mb-6"
@@ -123,7 +123,7 @@ export default function SolutionsPage() {
           </p>
           <Link
             href="/quote"
-            className="inline-block bg-[#c4a86b] text-[#1e3323] font-semibold text-sm px-8 py-4 rounded-full hover:bg-[#d4bc8b] transition-colors"
+            className="inline-block bg-[#c4a86b] text-[#7A000D] font-semibold text-sm px-8 py-4 rounded-full hover:bg-[#d4bc8b] transition-colors"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Start a Conversation

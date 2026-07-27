@@ -32,8 +32,8 @@ export async function POST(req: NextRequest) {
       to: MAIL_TO,
       subject: `New Quote Request — ${service} from ${company}`,
       html: `
-        <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;color:#1e3323">
-          <div style="background:#1e3323;padding:32px;text-align:center">
+        <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;color:#FF0019">
+          <div style="background:#FF0019;padding:32px;text-align:center">
             <h1 style="color:#f5f0e8;font-size:24px;letter-spacing:0.2em;margin:0">CENTZMI</h1>
             <p style="color:#c4a86b;font-size:11px;letter-spacing:0.3em;margin:4px 0 0">NEW QUOTE REQUEST</p>
           </div>
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
               <p style="font-weight:600;margin-bottom:8px">Project Description</p>
               <p style="background:#f5f0e8;padding:16px;border-radius:8px;line-height:1.7;margin:0">${description}</p>
             </div>
-            <div style="margin-top:24px;padding:16px;background:#1e3323;border-radius:8px;text-align:center">
+            <div style="margin-top:24px;padding:16px;background:#FF0019;border-radius:8px;text-align:center">
               <p style="color:#f5f0e8;margin:0;font-size:13px">Record ID: <span style="color:#c4a86b;font-family:monospace">${record._id}</span></p>
             </div>
           </div>
@@ -69,8 +69,8 @@ export async function POST(req: NextRequest) {
       to: email,
       subject: `We received your quote request — CentzMi`,
       html: `
-        <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;color:#1e3323">
-          <div style="background:#1e3323;padding:32px;text-align:center">
+        <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;color:#FF0019">
+          <div style="background:#FF0019;padding:32px;text-align:center">
             <h1 style="color:#f5f0e8;font-size:24px;letter-spacing:0.2em;margin:0">CENTZMI</h1>
             <p style="color:#c4a86b;font-size:11px;letter-spacing:0.3em;margin:4px 0 0">CREATIVE BRANDING</p>
           </div>
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
               In the meantime, feel free to explore our portfolio or reach out directly on WhatsApp if your project is time-sensitive.
             </p>
             <div style="text-align:center;margin-top:8px">
-              <a href="${process.env.NEXT_PUBLIC_APP_URL}/portfolio" style="display:inline-block;background:#c4a86b;color:#1e3323;text-decoration:none;padding:14px 32px;border-radius:50px;font-weight:600;font-size:14px">View Our Portfolio</a>
+              <a href="${process.env.NEXT_PUBLIC_APP_URL}/portfolio" style="display:inline-block;background:#c4a86b;color:#FF0019;text-decoration:none;padding:14px 32px;border-radius:50px;font-weight:600;font-size:14px">View Our Portfolio</a>
             </div>
           </div>
           <div style="padding:16px;text-align:center;background:#f5f0e8;border:1px solid #ede7db;border-top:none">
