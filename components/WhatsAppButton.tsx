@@ -2,7 +2,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2348037529545"}?text=Hi%20CentzMi%2C%20I%27d%20like%20to%20discuss%20a%20project.`}
+      href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2348066079075"}?text=Hi%20CentzMi%2C%20I%27d%20like%20to%20discuss%20a%20project.`}
       target="_blank"
       rel="noopener noreferrer"
       id="whatsapp-cta"

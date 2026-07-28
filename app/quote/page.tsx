@@ -29,22 +29,22 @@ export default function QuotePage() {
 
   const validate = (data: Record<string, string>) => {
     const errs: Record<string, string> = {};
-    if (!data.fullName)    errs.fullName    = "Full name is required.";
-    if (!data.company)     errs.company     = "Company name is required.";
-    if (!data.email)       errs.email       = "Email address is required.";
+    if (!data.fullName) errs.fullName = "Full name is required.";
+    if (!data.company) errs.company = "Company name is required.";
+    if (!data.email) errs.email = "Email address is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
-                           errs.email       = "Please enter a valid email.";
-    if (!data.phone)       errs.phone       = "Phone number is required.";
-    if (!data.service)     errs.service     = "Please select a service.";
+      errs.email = "Please enter a valid email.";
+    if (!data.phone) errs.phone = "Phone number is required.";
+    if (!data.service) errs.service = "Please select a service.";
     if (!data.description) errs.description = "Please describe your project.";
-    if (!data.timeline)    errs.timeline    = "Please select a timeline.";
+    if (!data.timeline) errs.timeline = "Please select a timeline.";
     return errs;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const fd   = new FormData(form);
+    const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
 
     const errs = validate(data);
@@ -54,9 +54,9 @@ export default function QuotePage() {
 
     try {
       const res = await fetch("/api/quote", {
-        method:  "POST",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify(data),
+        body: JSON.stringify(data),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Submission failed.");
@@ -132,13 +132,13 @@ export default function QuotePage() {
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
               {/* Row 1 */}
               <div className="grid sm:grid-cols-2 gap-6">
-                <Field label="Full Name" name="fullName" required error={errors.fullName} placeholder="Jane Doe" />
-                <Field label="Company Name" name="company" required error={errors.company} placeholder="Acme Corp" />
+                <Field label="Full Name" name="fullName" required error={errors.fullName} placeholder="Your full name " />
+                <Field label="Company Name" name="company" required error={errors.company} placeholder="Your company name " />
               </div>
 
               {/* Row 2 */}
               <div className="grid sm:grid-cols-2 gap-6">
-                <Field label="Email Address" name="email" type="email" required error={errors.email} placeholder="jane@company.com" />
+                <Field label="Email Address" name="email" type="email" required error={errors.email} placeholder="mail@company.com" />
                 <Field label="Phone Number" name="phone" type="tel" required error={errors.phone} placeholder="+234 800 000 0000" />
               </div>
 

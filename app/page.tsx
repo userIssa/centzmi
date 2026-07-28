@@ -417,11 +417,10 @@ export default function SinglePageHome() {
                   setActiveCategory(cat);
                   setIsPortfolioExpanded(false);
                 }}
-                className={`text-xs font-bold uppercase px-5 py-2.5 rounded-full border transition-all duration-200 ${
-                  activeCategory === cat
-                    ? "bg-[#7A000D] border-[#FF0019] text-[#f5f0e8]"
-                    : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#FF0019] hover:text-[#7A000D]"
-                }`}
+                className={`text-xs font-bold uppercase px-5 py-2.5 rounded-full border transition-all duration-200 ${activeCategory === cat
+                  ? "bg-[#7A000D] border-[#FF0019] text-[#f5f0e8]"
+                  : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#FF0019] hover:text-[#7A000D]"
+                  }`}
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 {cat}
@@ -698,7 +697,7 @@ export default function SinglePageHome() {
                   >
                     ITEMIZED BREAKDOWN
                   </p>
-                  
+
                   <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
                     <div>
                       <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
@@ -976,13 +975,13 @@ export default function SinglePageHome() {
               )}
 
               <div className="grid sm:grid-cols-2 gap-6">
-                <InputField label="Full Name" name="fullName" required error={quoteErrors.fullName} placeholder="Jane Doe" />
-                <InputField label="Company Name" name="company" required error={quoteErrors.company} placeholder="Acme Corp" />
+                <InputField label="Full Name" name="fullName" required error={quoteErrors.fullName} placeholder="Your full name " />
+                <InputField label="Company Name" name="company" required error={quoteErrors.company} placeholder="Your company name " />
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
-                <InputField label="Email Address" name="email" type="email" required error={quoteErrors.email} placeholder="jane@company.com" />
-                <InputField label="Phone Number" name="phone" type="tel" required error={quoteErrors.phone} placeholder="+234 803 752 9545" />
+                <InputField label="Email Address" name="email" type="email" required error={quoteErrors.email} placeholder="mail@company.com" />
+                <InputField label="Phone Number" name="phone" type="tel" required error={quoteErrors.phone} placeholder="+234 801 234 5678" />
               </div>
 
               <div>
@@ -1103,19 +1102,20 @@ export default function SinglePageHome() {
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-2 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>OFFICE</p>
                 <p className="text-sm text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  5 National Supply Road, Trans Amadi<br />Port Harcourt 500101, Rivers, Nigeria
+                  <span className="font-bold text-[#7A000D] block mb-0.5">Bogaty Centrum Limited.</span>
+                  No. 5 National Supply Road, Trans Amadi Industrial Layout<br />Port Harcourt, Rivers State, Nigeria
                 </p>
               </div>
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-2 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>DIRECT CONTACT</p>
                 <p className="text-sm text-[#7A000D] font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  <a href="tel:+2348037529545" className="hover:text-[#c4a86b] transition-colors">+234 803 752 9545</a> · hello@centzmi.com
+                  <a href="tel:+2348066079075" className="hover:text-[#c4a86b] transition-colors">+234 (0)806 607 9075</a> · info@centzmi.com
                 </p>
               </div>
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-3 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>WHATSAPP</p>
                 <a
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348037529545"}`}
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348066079075"}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white bg-[#25D366] px-5 py-2.5 rounded-full hover:bg-[#1da851] transition-colors shadow-sm"
@@ -1142,7 +1142,7 @@ export default function SinglePageHome() {
               ) : (
                 <form onSubmit={handleContactSubmit} noValidate className="space-y-8">
                   {contactStatus === "error" && <div className="p-3 bg-red-50 border border-red-200 text-xs text-red-700 font-medium">{contactError}</div>}
-                  
+
                   {/* First Name & Last Name */}
                   <div className="grid sm:grid-cols-2 gap-8">
                     <UnderlineInputField label="First name *" name="firstName" required error={contactErrors.name} />

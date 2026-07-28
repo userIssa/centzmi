@@ -112,17 +112,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-[#f5f0e8]/70 font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
               <li>
-                <a href="mailto:hello@centzmi.com" className="hover:text-[#c4a86b] transition-colors">
-                  hello@centzmi.com
+                <a href="mailto:info@centzmi.com" className="hover:text-[#c4a86b] transition-colors">
+                  info@centzmi.com
                 </a>
               </li>
               <li>
-                <a href="tel:+2348037529545" className="hover:text-[#c4a86b] transition-colors font-bold">
-                  +234 803 752 9545
+                <a href="tel:+2348066079075" className="hover:text-[#c4a86b] transition-colors font-bold">
+                  +234 (0)806 607 9075
                 </a>
               </li>
-              <li className="text-[#f5f0e8]/50 leading-relaxed">
-                Port Harcourt, Rivers, Nigeria
+              <li className="text-[#f5f0e8]/50 text-xs leading-relaxed">
+                <span className="font-bold text-[#f5f0e8]/80 block">Bogaty Centrum Limited.</span>
+                No. 5 National Supply Road, Trans Amadi Industrial Layout, Port Harcourt, Rivers State
               </li>
               <li className="pt-2">
                 <a
