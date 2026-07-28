@@ -40,16 +40,16 @@ export default function PortfolioPage() {
       {/* Filter + Grid */}
       <section className="bg-[#faf7f2] py-16 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-12">
+          {/* Filter tabs — Horizontal swipe on mobile, wrapped flex on desktop */}
+          <div className="flex items-center overflow-x-auto whitespace-nowrap scrollbar-none gap-2 pb-2 mb-8 md:flex-wrap md:pb-0 -mx-6 px-6 md:mx-0">
             {portfolioCategories.map((cat) => (
               <button
                 key={cat}
                 id={`filter-${cat.toLowerCase().replace(/\s+/g, "-")}`}
                 onClick={() => setActive(cat)}
-                className={`text-xs font-medium px-5 py-2.5 rounded-full border transition-all duration-200 ${
+                className={`shrink-0 text-xs font-medium px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-200 ${
                   active === cat
-                    ? "bg-[#7A000D] border-[#7A000D] text-[#f5f0e8]"
+                    ? "bg-[#7A000D] border-[#7A000D] text-[#f5f0e8] shadow-sm"
                     : "bg-transparent border-[#ede7db] text-[#6b6b5e] hover:border-[#7A000D] hover:text-[#7A000D]"
                 }`}
                 style={{ fontFamily: "Inter, sans-serif" }}
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
           </p>
 
           {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {filtered.map((item) => (
               <div
                 key={item.id}
@@ -83,31 +83,31 @@ export default function PortfolioPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#7A000D]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <p
-                      className="text-[#f5f0e8] text-sm font-medium"
-                      style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "16px" }}
+                      className="text-[#f5f0e8] text-xs sm:text-sm font-medium truncate"
+                      style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
                     >
                       {item.title}
                     </p>
                     <p
-                      className="text-[#c4a86b] text-xs mt-0.5"
+                      className="text-[#c4a86b] text-[10px] sm:text-xs mt-0.5"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
                       {item.client}
                     </p>
                   </div>
                 </div>
-                <div className="px-4 py-3">
+                <div className="p-2.5 sm:p-4">
                   <p
-                    className="text-xs text-[#c4a86b] tracking-wider uppercase mb-1"
+                    className="text-[9px] sm:text-xs text-[#c4a86b] tracking-wider uppercase mb-0.5 sm:mb-1 truncate"
                     style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     {item.category}
                   </p>
                   <p
-                    className="text-sm text-[#7A000D] font-medium leading-snug"
-                    style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "16px" }}
+                    className="text-xs sm:text-sm text-[#7A000D] font-medium leading-snug line-clamp-2"
+                    style={{ fontFamily: "Cormorant Garamond, Georgia, serif" }}
                   >
                     {item.title}
                   </p>
