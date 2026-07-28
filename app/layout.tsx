@@ -46,6 +46,11 @@ export const metadata: Metadata = {
       "Creative branding. Premium packaging. Lasting impressions. Helping businesses communicate with clarity and build stronger brands.",
     siteName: "CentzMi",
   },
+  icons: {
+    icon: "/logo.png?v=3",
+    shortcut: "/logo.png?v=3",
+    apple: "/logo.png?v=3",
+  },
 };
 
 export default function RootLayout({
@@ -58,6 +63,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} ${spaceGrotesk.variable}`}
     >
+      <head>
+        <link rel="icon" href="/logo.png?v=3" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png?v=3" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png?v=3" />
+      </head>
       <body className="bg-[#faf7f2] text-[#7A000D] antialiased">
         <Navbar />
         <main>{children}</main>
