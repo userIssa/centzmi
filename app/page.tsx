@@ -46,6 +46,9 @@ export default function SinglePageHome() {
   const [isPortfolioExpanded, setIsPortfolioExpanded] = useState(false);
   const [selectedProject, setSelectedProject] = useState<(typeof portfolioItems)[0] | null>(null);
 
+  // Pricing tab state (for mobile view toggle)
+  const [pricingTab, setPricingTab] = useState<"corporate" | "individual">("corporate");
+
   // Quote form state
   const [quoteStatus, setQuoteStatus] = useState<FormStatus>("idle");
   const [quoteError, setQuoteError] = useState("");
@@ -637,10 +640,151 @@ export default function SinglePageHome() {
             </p>
           </div>
 
-          {/* Pricing Tiers Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch mb-20">
-            {/* Individual / Personal Client Rate */}
-            <div className="bg-[#faf7f2] border border-[#ede7db] rounded-3xl p-8 lg:p-10 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative">
+          {/* Mobile Tab Toggle (< lg) */}
+          <div className="lg:hidden flex items-center justify-center gap-2 mb-6 p-1.5 bg-[#faf7f2] border border-[#ede7db] rounded-full max-w-sm mx-auto shadow-sm">
+            <button
+              onClick={() => {
+                setPricingTab("corporate");
+                document.getElementById("card-corporate")?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              }}
+              className={`flex-1 text-xs font-bold uppercase tracking-wider py-2.5 rounded-full transition-all duration-300 ${
+                pricingTab === "corporate"
+                  ? "bg-[#7A000D] text-[#f5f0e8] shadow-md"
+                  : "text-[#6b6b5e] hover:text-[#7A000D]"
+              }`}
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+            >
+              Corporate (₦750k)
+            </button>
+            <button
+              onClick={() => {
+                setPricingTab("individual");
+                document.getElementById("card-individual")?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              }}
+              className={`flex-1 text-xs font-bold uppercase tracking-wider py-2.5 rounded-full transition-all duration-300 ${
+                pricingTab === "individual"
+                  ? "bg-[#7A000D] text-[#f5f0e8] shadow-md"
+                  : "text-[#6b6b5e] hover:text-[#7A000D]"
+              }`}
+              style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+            >
+              Personal (₦400k)
+            </button>
+          </div>
+
+          {/* Pricing Tiers — Mobile Horizontal Swipe Slider (< lg) */}
+          <div className="lg:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 mb-4 -mx-6 px-6">
+            {/* 1. Corporate / Company Client Rate (FIRST) */}
+            <div
+              id="card-corporate"
+              className="w-full shrink-0 snap-center bg-[#7A000D] text-[#f5f0e8] border border-[#c4a86b]/40 rounded-3xl p-7 flex flex-col justify-between shadow-xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-2 bg-[#c4a86b]" />
+              <div>
+                <div className="flex items-center justify-between gap-4 mb-4 pt-2">
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#c4a86b] text-[#7A000D]"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                  >
+                    CORPORATE / COMPANY
+                  </span>
+                  <span className="text-xs text-[#c4a86b] font-semibold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                    Registered Businesses
+                  </span>
+                </div>
+
+                <h3
+                  className="text-2xl font-bold text-[#f5f0e8] uppercase mb-2"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                >
+                  Corporate Client Rate
+                </h3>
+                <p
+                  className="text-xs text-[#ede7db]/80 leading-relaxed mb-6 font-medium"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                >
+                  Applies when the client is a registered business/company. Reflects higher expectations for reliability, support, and formal invoicing.
+                </p>
+
+                {/* Price Header */}
+                <div className="bg-[#faf7f2] border border-[#ede7db] p-6 rounded-2xl mb-8">
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      className="text-4xl font-extrabold text-[#7A000D]"
+                      style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                    >
+                      ₦750,000
+                    </span>
+                    <span
+                      className="text-xs font-bold text-[#c4a86b] uppercase tracking-wider"
+                      style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                    >
+                      PACKAGE RATE
+                    </span>
+                  </div>
+                  <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
+                    <span className="line-through decoration-[#c4a86b] decoration-2">Subtotal: ₦800,000</span>
+                    <span className="bg-[#c4a86b] text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦50k</span>
+                  </div>
+                </div>
+
+                {/* Line Items Table */}
+                <div className="space-y-4 mb-8">
+                  <p
+                    className="text-xs font-bold uppercase tracking-wider text-[#c4a86b] border-b border-[#c4a86b]/30 pb-2"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                  >
+                    ITEMIZED BREAKDOWN
+                  </p>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
+                    <div>
+                      <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
+                      <p className="text-[11px] text-[#ede7db]/70">Next.js build, responsive layout, page structure</p>
+                    </div>
+                    <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦350,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
+                    <div>
+                      <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>UI/UX Design</p>
+                      <p className="text-[11px] text-[#ede7db]/70">Template adaptation, brand color & typography integration</p>
+                    </div>
+                    <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦200,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
+                    <div>
+                      <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Contact Form Setup</p>
+                      <p className="text-[11px] text-[#ede7db]/70">Nodemailer integration, delivery testing & fix</p>
+                    </div>
+                    <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦150,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#c4a86b]/30 text-xs">
+                    <div>
+                      <p className="font-bold text-[#f5f0e8]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Content & Asset Integration</p>
+                      <p className="text-[11px] text-[#ede7db]/70">Logos, partner marquee, copy placement</p>
+                    </div>
+                    <span className="font-bold text-[#c4a86b] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦100,000</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="#quote"
+                className="w-full bg-[#c4a86b] text-[#7A000D] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#d4bc8b] transition-colors shadow-lg block"
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+              >
+                REQUEST CORPORATE PLAN — ₦750,000
+              </a>
+            </div>
+
+            {/* 2. Individual / Personal Client Rate (SECOND) */}
+            <div
+              id="card-individual"
+              className="w-full shrink-0 snap-center bg-[#faf7f2] border border-[#ede7db] rounded-3xl p-7 flex flex-col justify-between shadow-lg relative"
+            >
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <span
@@ -671,7 +815,7 @@ export default function SinglePageHome() {
                 <div className="bg-[#f5f0e8] border border-[#ede7db] p-6 rounded-2xl mb-8">
                   <div className="flex items-baseline gap-2">
                     <span
-                      className="text-4xl lg:text-5xl font-extrabold text-[#7A000D]"
+                      className="text-4xl font-extrabold text-[#7A000D]"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       ₦400,000
@@ -684,12 +828,12 @@ export default function SinglePageHome() {
                     </span>
                   </div>
                   <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
-                    <span className="line-through decoration-[#c4a86b] decoration-2">Itemized Subtotal: ₦500,000</span>
+                    <span className="line-through decoration-[#c4a86b] decoration-2">Subtotal: ₦500,000</span>
                     <span className="bg-[#c4a86b]/15 text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
                   </div>
                 </div>
 
-                {/* Line Items Table / List */}
+                {/* Line Items Table */}
                 <div className="space-y-4 mb-8">
                   <p
                     className="text-xs font-bold uppercase tracking-wider text-[#7A000D] border-b border-[#ede7db] pb-2"
@@ -740,12 +884,37 @@ export default function SinglePageHome() {
                 REQUEST PERSONAL PLAN — ₦400,000
               </a>
             </div>
+          </div>
 
-            {/* Corporate / Company Client Rate */}
+          {/* Mobile Swipe Pagination Dots (< lg) */}
+          <div className="lg:hidden flex items-center justify-center gap-2 mb-16">
+            <button
+              onClick={() => {
+                setPricingTab("corporate");
+                document.getElementById("card-corporate")?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              }}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                pricingTab === "corporate" ? "w-8 bg-[#7A000D]" : "w-2.5 bg-[#ede7db]"
+              }`}
+              aria-label="View Corporate Plan"
+            />
+            <button
+              onClick={() => {
+                setPricingTab("individual");
+                document.getElementById("card-individual")?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+              }}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                pricingTab === "individual" ? "w-8 bg-[#7A000D]" : "w-2.5 bg-[#ede7db]"
+              }`}
+              aria-label="View Personal Plan"
+            />
+          </div>
+
+          {/* Pricing Tiers — Desktop Grid (>= lg) */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8 items-stretch mb-20">
+            {/* 1. Corporate / Company Client Rate (LEFT / FIRST) */}
             <div className="bg-[#7A000D] text-[#f5f0e8] border border-[#c4a86b]/40 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden">
-              {/* Gold Top Accent Line */}
               <div className="absolute top-0 left-0 right-0 h-2 bg-[#c4a86b]" />
-
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4 pt-2">
                   <span
@@ -794,7 +963,7 @@ export default function SinglePageHome() {
                   </div>
                 </div>
 
-                {/* Line Items Table / List */}
+                {/* Line Items Table */}
                 <div className="space-y-4 mb-8">
                   <p
                     className="text-xs font-bold uppercase tracking-wider text-[#c4a86b] border-b border-[#c4a86b]/30 pb-2"
@@ -843,6 +1012,108 @@ export default function SinglePageHome() {
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
                 REQUEST CORPORATE PLAN — ₦750,000
+              </a>
+            </div>
+
+            {/* 2. Individual / Personal Client Rate (RIGHT / SECOND) */}
+            <div className="bg-[#faf7f2] border border-[#ede7db] rounded-3xl p-8 lg:p-10 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative">
+              <div>
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#7A000D]/10 text-[#7A000D]"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                  >
+                    INDIVIDUAL / PERSONAL
+                  </span>
+                  <span className="text-xs text-[#6b6b5e] font-semibold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+                    Solo & Personal Projects
+                  </span>
+                </div>
+
+                <h3
+                  className="text-2xl font-bold text-[#7A000D] uppercase mb-2"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                >
+                  Personal Client Rate
+                </h3>
+                <p
+                  className="text-xs text-[#6b6b5e] leading-relaxed mb-6 font-medium"
+                  style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                >
+                  Best suited for personal projects, solo entrepreneurs, or early-stage individuals with limited budget flexibility.
+                </p>
+
+                {/* Price Header */}
+                <div className="bg-[#f5f0e8] border border-[#ede7db] p-6 rounded-2xl mb-8">
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      className="text-4xl lg:text-5xl font-extrabold text-[#7A000D]"
+                      style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                    >
+                      ₦400,000
+                    </span>
+                    <span
+                      className="text-xs font-bold text-[#c4a86b] uppercase tracking-wider"
+                      style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                    >
+                      PACKAGE RATE
+                    </span>
+                  </div>
+                  <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
+                    <span className="line-through decoration-[#c4a86b] decoration-2">Itemized Subtotal: ₦500,000</span>
+                    <span className="bg-[#c4a86b]/15 text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
+                  </div>
+                </div>
+
+                {/* Line Items Table */}
+                <div className="space-y-4 mb-8">
+                  <p
+                    className="text-xs font-bold uppercase tracking-wider text-[#7A000D] border-b border-[#ede7db] pb-2"
+                    style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+                  >
+                    ITEMIZED BREAKDOWN
+                  </p>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
+                    <div>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Web Development</p>
+                      <p className="text-[11px] text-[#6b6b5e]">Next.js build, responsive layout, page structure</p>
+                    </div>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦220,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
+                    <div>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>UI/UX Design</p>
+                      <p className="text-[11px] text-[#6b6b5e]">Template adaptation, brand color & typography integration</p>
+                    </div>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦120,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
+                    <div>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Contact Form Setup</p>
+                      <p className="text-[11px] text-[#6b6b5e]">Nodemailer integration, delivery testing & fix</p>
+                    </div>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦90,000</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4 py-2 border-b border-[#ede7db]/60 text-xs">
+                    <div>
+                      <p className="font-bold text-[#7A000D]" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>Content & Asset Integration</p>
+                      <p className="text-[11px] text-[#6b6b5e]">Logos, partner marquee, copy placement</p>
+                    </div>
+                    <span className="font-bold text-[#7A000D] shrink-0" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>₦70,000</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="#quote"
+                className="w-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#930010] transition-colors shadow-md block"
+                style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
+              >
+                REQUEST PERSONAL PLAN — ₦400,000
               </a>
             </div>
           </div>
