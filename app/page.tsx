@@ -668,7 +668,7 @@ export default function SinglePageHome() {
               }`}
               style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
             >
-              Personal (₦400k)
+              Personal (₦500k)
             </button>
           </div>
 
@@ -818,7 +818,7 @@ export default function SinglePageHome() {
                       className="text-4xl font-extrabold text-[#7A000D]"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
-                      ₦400,000
+                      ₦500,000
                     </span>
                     <span
                       className="text-xs font-bold text-[#c4a86b] uppercase tracking-wider"
@@ -826,10 +826,6 @@ export default function SinglePageHome() {
                     >
                       PACKAGE RATE
                     </span>
-                  </div>
-                  <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
-                    <span className="line-through decoration-[#c4a86b] decoration-2">Subtotal: ₦500,000</span>
-                    <span className="bg-[#c4a86b]/15 text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
                   </div>
                 </div>
 
@@ -881,7 +877,7 @@ export default function SinglePageHome() {
                 className="w-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#930010] transition-colors shadow-md block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
-                REQUEST PERSONAL PLAN — ₦400,000
+                REQUEST PERSONAL PLAN — ₦500,000
               </a>
             </div>
           </div>
@@ -1050,18 +1046,14 @@ export default function SinglePageHome() {
                       className="text-4xl lg:text-5xl font-extrabold text-[#7A000D]"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
-                      ₦400,000
+                      ₦500,000
                     </span>
                     <span
                       className="text-xs font-bold text-[#c4a86b] uppercase tracking-wider"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
-                      PACKAGE RATE
+                      STANDARD RATE
                     </span>
-                  </div>
-                  <div className="mt-2 text-xs text-[#6b6b5e] font-medium flex items-center gap-2">
-                    <span className="line-through decoration-[#c4a86b] decoration-2">Itemized Subtotal: ₦500,000</span>
-                    <span className="bg-[#c4a86b]/15 text-[#7A000D] font-bold px-2 py-0.5 rounded text-[11px]">Save ₦100k</span>
                   </div>
                 </div>
 
@@ -1113,7 +1105,7 @@ export default function SinglePageHome() {
                 className="w-full bg-[#7A000D] text-[#f5f0e8] text-xs font-bold uppercase tracking-wider py-4 rounded-full text-center hover:bg-[#930010] transition-colors shadow-md block"
                 style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
               >
-                REQUEST PERSONAL PLAN — ₦400,000
+                REQUEST PERSONAL PLAN — ₦500,000
               </a>
             </div>
           </div>
