@@ -1189,10 +1189,10 @@ export default function SinglePageHome() {
                   04
                 </div>
                 <h4 className="text-sm font-bold text-[#1e3323] uppercase mb-2" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  Negotiation Room
+                  Scope Expansion
                 </h4>
                 <p className="text-xs text-[#6b6b5e] leading-relaxed font-medium" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  Both tiers include a package rate discount off itemized subtotals, allowing room for negotiation without compromising target quality.
+                  Listed rates serve as baseline starting points. Additional feature requests, custom integrations, or expanded deliverables provide room to negotiate upwards per project scope.
                 </p>
               </div>
             </div>
@@ -1392,7 +1392,7 @@ export default function SinglePageHome() {
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-[#c4a86b] mb-2 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>DIRECT CONTACT</p>
                 <p className="text-sm text-[#1e3323] font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  <a href="tel:+2348066079075" className="hover:text-[#c4a86b] transition-colors">+234 (0)806 607 9075</a> · info@centzmi.com
+                  <a href="tel:+2348066079075" className="hover:text-[#c4a86b] transition-colors">+234 (0)806 607 9075</a> · <a href="mailto:info@centzmi.com" className="hover:text-[#c4a86b] transition-colors underline underline-offset-4 decoration-[#c4a86b]/40">info@centzmi.com</a>
                 </p>
               </div>
               <div>
