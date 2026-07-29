@@ -3,10 +3,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green-dark: #7A000D;
-  --color-green-primary: #4F0008;
-  --color-green-medium: #930010;
-  --color-green-light: #A80012;
+  --color-green-dark: #1e3323;
+  --color-green-primary: #243824;
+  --color-green-medium: #2d4a2d;
+  --color-green-light: #3d6040;
   --color-cream: #f5f0e8;
   --color-cream-light: #faf7f2;
   --color-cream-dark: #ede7db;

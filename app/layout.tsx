@@ -68,7 +68,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.png?v=3" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png?v=3" />
       </head>
-      <body className="bg-[#faf7f2] text-[#7A000D] antialiased">
+      <body className="bg-[#faf7f2] text-[#1e3323] antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

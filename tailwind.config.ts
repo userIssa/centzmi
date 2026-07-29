@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         green: {
-          dark: "#7A000D",
-          primary: "#4F0008",
-          medium: "#930010",
-          light: "#A80012",
+          dark: "#1e3323",
+          primary: "#243824",
+          medium: "#2d4a2d",
+          light: "#3d6040",
         },
         cream: {
           DEFAULT: "#f5f0e8",
