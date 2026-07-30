@@ -240,20 +240,34 @@ export default function SinglePageHome() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-[#1e3323] rounded-2xl p-8 text-[#f5f0e8]">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  OUR MISSION
-                </p>
-                <p className="text-xl lg:text-2xl font-medium leading-relaxed uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+              {/* Mission Card */}
+              <div className="group relative bg-[#1e3323] border border-[#c4a86b]/20 rounded-2xl p-8 lg:p-10 text-[#f5f0e8] shadow-lg hover:border-[#c4a86b]/40 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#c4a86b]"></span>
+                  <h3 className="text-2xl lg:text-3xl font-bold uppercase tracking-[0.15em] text-[#c4a86b]" style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}>
+                    Our Mission
+                  </h3>
+                </div>
+                <p 
+                  className="text-base lg:text-lg font-light text-[#f5f0e8]/90 leading-relaxed border-l-2 border-[#c4a86b] pl-5" 
+                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif" }}
+                >
                   To deliver innovative branding and visual communication solutions that empower businesses to communicate with confidence, strengthen their identity, and compete successfully.
                 </p>
               </div>
 
-              <div className="bg-[#ede7db] rounded-2xl p-8">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#c4a86b] mb-4 font-bold" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
-                  OUR VISION
-                </p>
-                <p className="text-xl lg:text-2xl font-medium text-[#1e3323] leading-relaxed uppercase tracking-tight" style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}>
+              {/* Vision Card */}
+              <div className="group relative bg-[#ede7db] border border-[#c4a86b]/30 rounded-2xl p-8 lg:p-10 text-[#1e3323] shadow-md hover:border-[#c4a86b]/60 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#c4a86b]"></span>
+                  <h3 className="text-2xl lg:text-3xl font-bold uppercase tracking-[0.15em] text-[#c4a86b]" style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}>
+                    Our Vision
+                  </h3>
+                </div>
+                <p 
+                  className="text-base lg:text-lg font-light text-[#1e3323]/90 leading-relaxed border-l-2 border-[#c4a86b] pl-5" 
+                  style={{ fontFamily: "var(--font-cormorant), 'Cormorant Garamond', Georgia, serif" }}
+                >
                   To become Africa&apos;s preferred creative branding and visual communications company, recognised for innovation, quality, creativity, and exceptional service.
                 </p>
               </div>
