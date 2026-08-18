@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import InvoicePreview, { InvoiceData, InvoiceSection } from "./InvoicePreview";
 import { amountToWords } from "@/lib/numberToWords";
 
@@ -84,6 +84,28 @@ export default function InvoiceForm({
   const [showPreview, setShowPreview] = useState(false);
   const [showStyleMenu, setShowStyleMenu] = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
+  const styleMenuRef = useRef<HTMLDivElement>(null);
+
+  // Close Style menu when tapping / clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      if (
+        styleMenuRef.current &&
+        !styleMenuRef.current.contains(event.target as Node)
+      ) {
+        setShowStyleMenu(false);
+      }
+    }
+
+    if (showStyleMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [showStyleMenu]);
 
   // ---- Recalculate totals ----
   const recalc = useCallback((d: InvoiceData): InvoiceData => {
@@ -197,7 +219,7 @@ export default function InvoiceForm({
     }
   };
 
-  // ---- Print ----
+  // ---- Print with guaranteed single-page auto-fit ----
   const handlePrint = () => {
     const prevTitle = document.title;
     const docLabel = data.documentType === "quote" ? "Quote" : "Invoice";
@@ -209,11 +231,31 @@ export default function InvoiceForm({
     // Set page title so browser uses it as default file name when saving to PDF
     document.title = `${clientName} - ${docLabel}${invNum}`;
 
+    // Target the dedicated print preview container to auto-fit
+    const printEl = printRef.current?.querySelector("#invoice-preview") as HTMLElement | null;
+    if (printEl) {
+      printEl.style.transform = "none";
+      printEl.style.transformOrigin = "top center";
+
+      // A4 printable height at 96 DPI with margins is ~1040px
+      const maxA4HeightPx = 1040;
+      const actualHeight = printEl.scrollHeight;
+
+      if (actualHeight > maxA4HeightPx) {
+        const scaleRatio = Math.max(0.68, Math.min(0.98, maxA4HeightPx / actualHeight));
+        printEl.style.transform = `scale(${scaleRatio})`;
+        printEl.style.transformOrigin = "top center";
+      }
+    }
+
     window.print();
 
-    // Restore title after print dialog closes
+    // Restore title and print styles after print dialog closes
     setTimeout(() => {
       document.title = prevTitle;
+      if (printEl) {
+        printEl.style.transform = "none";
+      }
     }, 1500);
   };
 
@@ -232,7 +274,7 @@ export default function InvoiceForm({
             </span>
 
             {/* Style Button matching user reference */}
-            <div className="relative">
+            <div className="relative" ref={styleMenuRef}>
               <button
                 type="button"
                 onClick={() => setShowStyleMenu(!showStyleMenu)}

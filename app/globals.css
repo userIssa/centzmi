@@ -152,9 +152,9 @@ body {
     color: #1a1a1a !important;
     margin: 0 !important;
     padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
+    height: 100% !important;
+    max-height: 280mm !important;
+    overflow: hidden !important;
   }
 
   .admin-portal {
@@ -182,11 +182,17 @@ body {
     width: 100% !important;
     margin: 0 auto !important;
     padding: 0 !important;
+    max-height: 280mm !important;
+    overflow: hidden !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    break-inside: avoid !important;
   }
 
   @page {
     size: A4 portrait;
-    margin: 10mm 12mm;
+    margin: 8mm 12mm;
   }
 
   #invoice-preview {
@@ -200,11 +206,17 @@ body {
     background: #ffffff !important;
     font-family: var(--invoice-font, 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif) !important;
     color: var(--invoice-text-color, #1A1A1A) !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    break-inside: avoid !important;
   }
 
   #invoice-preview,
   #invoice-preview * {
     font-family: var(--invoice-font, 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif) !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   #invoice-preview h1.invoice-main-title {
