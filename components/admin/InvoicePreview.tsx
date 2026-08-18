@@ -103,7 +103,7 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
               style={{
                 fontSize: "26pt",
                 fontWeight: 700,
-                color: titleColor,
+                color: "#1A1A1A",
                 letterSpacing: "3px",
                 margin: 0,
                 lineHeight: 1.1,
@@ -508,66 +508,64 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
         {data.documentType === "invoice" && (
           <div
             style={{
-              border: "2px solid #c62828",
-              borderRadius: "4px",
-              padding: "14px 18px",
+              background: "#F8FAFC",
+              borderLeft: "4px solid #1E73BE",
+              padding: "10px 16px",
               margin: "16px 0",
-              maxWidth: "320px",
+              maxWidth: "340px",
             }}
           >
             <h3
               style={{
-                fontSize: "9pt",
+                fontSize: "8.5pt",
                 fontWeight: 700,
-                color: "#c62828",
+                color: "#1E73BE",
                 textTransform: "uppercase",
-                letterSpacing: "2px",
-                margin: "0 0 10px",
-                borderBottom: "1px solid #eee",
-                paddingBottom: "6px",
+                letterSpacing: "1.5px",
+                margin: "0 0 6px",
               }}
             >
-              Payment Details
+              PAYMENT DETAILS
             </h3>
-            <table style={{ fontSize: "9pt" }}>
+            <table style={{ fontSize: "9pt", borderCollapse: "collapse" }}>
               <tbody>
                 <tr>
                   <td
                     style={{
-                      padding: "2px 12px 2px 0",
-                      color: "#888",
+                      padding: "2px 14px 2px 0",
+                      color: "#64748B",
                       whiteSpace: "nowrap",
                     }}
                   >
                     Account Name:
                   </td>
-                  <td style={{ fontWeight: 600 }}>
+                  <td style={{ fontWeight: 600, color: "#1A1A1A" }}>
                     {data.paymentDetails.accountName}
                   </td>
                 </tr>
                 <tr>
                   <td
                     style={{
-                      padding: "2px 12px 2px 0",
-                      color: "#888",
+                      padding: "2px 14px 2px 0",
+                      color: "#64748B",
                     }}
                   >
                     Bank:
                   </td>
-                  <td style={{ fontWeight: 600 }}>
+                  <td style={{ fontWeight: 600, color: "#1A1A1A" }}>
                     {data.paymentDetails.bank}
                   </td>
                 </tr>
                 <tr>
                   <td
                     style={{
-                      padding: "2px 12px 2px 0",
-                      color: "#888",
+                      padding: "2px 14px 2px 0",
+                      color: "#64748B",
                     }}
                   >
                     Account Number:
                   </td>
-                  <td style={{ fontWeight: 600 }}>
+                  <td style={{ fontWeight: 600, color: "#1A1A1A" }}>
                     {data.paymentDetails.accountNumber}
                   </td>
                 </tr>
