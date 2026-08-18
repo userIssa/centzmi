@@ -103,50 +103,74 @@ body {
 }
 
 @media print {
-  /* Hide everything except the invoice preview */
-  body > * {
-    display: none !important;
+  /* Force all background colors, colored section headers, stripes, and text colors to print */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
-  .print-only {
-    display: block !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999;
+  /* Reset document background and sizing */
+  html,
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
   }
 
+  .admin-portal {
+    background: #ffffff !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide interactive form UI, headers, and buttons */
   .admin-form-wrapper,
   .admin-portal header,
-  nav, footer,
-  button {
+  header,
+  nav,
+  footer,
+  button,
+  .print-hidden {
     display: none !important;
+  }
+
+  /* Show the dedicated print document */
+  .print-only {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 
   @page {
     size: A4 portrait;
-    margin: 0;
-  }
-
-  body {
-    background: #fff !important;
-    margin: 0;
-    padding: 0;
+    margin: 10mm 12mm;
   }
 
   #invoice-preview {
-    width: 210mm !important;
-    min-height: 297mm !important;
-    max-width: 210mm !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
     margin: 0 auto !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 0 !important;
+    background: #ffffff !important;
   }
 
   #invoice-preview .invoice-preview-inner {
-    padding: 28px 36px 24px !important;
+    padding: 0 !important;
   }
 }
+
 

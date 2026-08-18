@@ -171,10 +171,7 @@ export default function InvoiceForm({
 
   // ---- Print ----
   const handlePrint = () => {
-    setShowPreview(true);
-    setTimeout(() => {
-      window.print();
-    }, 300);
+    window.print();
   };
 
   const formatCurrency = (n: number) =>
