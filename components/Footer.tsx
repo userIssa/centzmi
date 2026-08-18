@@ -16,7 +16,7 @@ const footerLinks = [
   { label: "Portfolio", href: "#portfolio" },
   { label: "Request a Quote", href: "#quote" },
   { label: "Contact", href: "#contact" },
-  { label: "Admin", href: "#admin" },
+  { label: "Admin Portal", href: "/admin" },
 ];
 
 export default function Footer() {
