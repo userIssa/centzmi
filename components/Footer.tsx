@@ -11,7 +11,7 @@ const footerSolutions = [
 ];
 
 const footerLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us and you", href: "#about" },
   { label: "Our Process", href: "#process" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Request a Quote", href: "#quote" },
