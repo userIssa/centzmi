@@ -68,6 +68,11 @@ export default function EditInvoicePage({
               accountNumber: "0700573131",
             },
             rcNumber: inv.rcNumber || "1828269",
+            fontFamily:
+              inv.fontFamily ||
+              "'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif",
+            titleColor: inv.titleColor || "#C62828",
+            textColor: inv.textColor || "#1A1A1A",
           });
         } else {
           setError("Invoice not found.");

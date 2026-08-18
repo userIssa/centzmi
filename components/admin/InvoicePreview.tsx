@@ -33,6 +33,9 @@ export interface InvoiceData {
     accountNumber: string;
   };
   rcNumber: string;
+  fontFamily?: string;
+  titleColor?: string;
+  textColor?: string;
 }
 
 function formatCurrency(amount: number): string {
@@ -56,14 +59,17 @@ const SECTION_COLORS = ["#C62828", "#1E73BE", "#689F38"];
 
 export default function InvoicePreview({ data }: { data: InvoiceData }) {
   const docLabel = data.documentType === "quote" ? "QUOTATION" : "INVOICE";
+  const fontFamily = data.fontFamily || "'Ebrima', 'Segoe UI', Tahoma, sans-serif";
+  const titleColor = data.titleColor || "#C62828";
+  const textColor = data.textColor || "#1A1A1A";
 
   return (
     <div
       id="invoice-preview"
-      className="invoice-preview-root w-full bg-white text-[#1a1a1a] shadow-xl rounded-md mx-auto"
+      className="invoice-preview-root w-full bg-white shadow-xl rounded-md mx-auto"
       style={{
-        fontFamily: "'Nexa Bold', 'Nexa', Arial, Helvetica, sans-serif",
-        color: "#1a1a1a",
+        fontFamily: fontFamily,
+        color: textColor,
         fontSize: "10pt",
         lineHeight: 1.45,
         position: "relative",
@@ -96,7 +102,7 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
               style={{
                 fontSize: "26pt",
                 fontWeight: 700,
-                color: "#c62828",
+                color: titleColor,
                 letterSpacing: "3px",
                 margin: 0,
                 lineHeight: 1.1,

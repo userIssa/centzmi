@@ -31,6 +31,9 @@ export interface IInvoice extends Document {
     accountNumber: string;
   };
   rcNumber: string;
+  fontFamily?: string;
+  titleColor?: string;
+  textColor?: string;
   status: "draft" | "sent" | "paid";
   createdAt: Date;
   updatedAt: Date;
@@ -78,6 +81,12 @@ const InvoiceSchema = new Schema<IInvoice>(
       accountNumber: { type: String, default: "0700573131" },
     },
     rcNumber: { type: String, default: "1828269" },
+    fontFamily: {
+      type: String,
+      default: "'Ebrima', 'Segoe UI', Tahoma, sans-serif",
+    },
+    titleColor: { type: String, default: "#C62828" },
+    textColor: { type: String, default: "#1A1A1A" },
     status: {
       type: String,
       enum: ["draft", "sent", "paid"],
