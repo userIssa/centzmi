@@ -24,14 +24,28 @@ html, body, button, input, textarea, select, h1, h2, h3, h4, h5, h6, p, a, span,
   font-family: 'Nexa Bold', 'Nexa', sans-serif !important;
 }
 
-/* Allow invoice preview to use its chosen custom font dynamically */
+/* Enforce Ebrima font family across the entire invoice and every child element */
 #invoice-preview {
-  font-family: var(--invoice-font, 'Ebrima', 'Segoe UI', Tahoma, sans-serif) !important;
+  font-family: 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif !important;
 }
 
-#invoice-preview,
-#invoice-preview * {
-  font-family: inherit !important;
+#invoice-preview *,
+#invoice-preview h1,
+#invoice-preview h2,
+#invoice-preview h3,
+#invoice-preview h4,
+#invoice-preview p,
+#invoice-preview span,
+#invoice-preview div,
+#invoice-preview table,
+#invoice-preview thead,
+#invoice-preview tbody,
+#invoice-preview tr,
+#invoice-preview th,
+#invoice-preview td,
+#invoice-preview em,
+#invoice-preview strong {
+  font-family: 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif !important;
 }
 
 html {
@@ -178,6 +192,12 @@ body {
     border: none !important;
     border-radius: 0 !important;
     background: #ffffff !important;
+    font-family: 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif !important;
+  }
+
+  #invoice-preview,
+  #invoice-preview * {
+    font-family: 'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif !important;
   }
 
   #invoice-preview .invoice-preview-inner {
