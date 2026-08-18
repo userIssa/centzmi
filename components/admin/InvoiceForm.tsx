@@ -171,7 +171,22 @@ export default function InvoiceForm({
 
   // ---- Print ----
   const handlePrint = () => {
+    const prevTitle = document.title;
+    const docLabel = data.documentType === "quote" ? "Quote" : "Invoice";
+    const clientName = (data.billedTo.trim() || "CentzMi").replace(/[/\\?%*:|"<>]/g, "-");
+    const invNum = data.invoiceNumber.trim()
+      ? ` - ${data.invoiceNumber.trim().replace(/[/\\?%*:|"<>]/g, "-")}`
+      : "";
+
+    // Set page title so browser uses it as default file name when saving to PDF
+    document.title = `${clientName} - ${docLabel}${invNum}`;
+
     window.print();
+
+    // Restore title after print dialog closes
+    setTimeout(() => {
+      document.title = prevTitle;
+    }, 1500);
   };
 
   const formatCurrency = (n: number) =>
