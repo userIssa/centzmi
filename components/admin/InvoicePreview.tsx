@@ -627,11 +627,22 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
             style={{
               fontSize: isUltraCompact ? "6pt" : "7pt",
               color: "#888",
-              margin: 0,
+              margin: "0 0 3px",
               fontStyle: "italic",
             }}
           >
             Creative Branding · Premium Packaging · Lasting Impressions
+          </p>
+          <p
+            style={{
+              fontSize: isUltraCompact ? "6.5pt" : "7.5pt",
+              fontWeight: 600,
+              color: "#1E73BE",
+              letterSpacing: "0.5px",
+              margin: 0,
+            }}
+          >
+            www.centzmi.com
           </p>
         </div>
       </div>
