@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const cormorant = Cormorant_Garamond({
@@ -69,10 +66,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png?v=3" />
       </head>
       <body className="bg-[#faf7f2] text-[#1e3323] antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        {children}
       </body>
     </html>
   );

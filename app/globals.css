@@ -56,3 +56,97 @@ body {
 .stagger-children > *:nth-child(5) { transition-delay: 0.33s; }
 .stagger-children > *:nth-child(6) { transition-delay: 0.40s; }
 .stagger-children > *:nth-child(7) { transition-delay: 0.47s; }
+
+/* ===== ADMIN PORTAL FORM STYLES ===== */
+.admin-portal .form-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.admin-portal .form-input {
+  width: 100%;
+  background: #0f1a12;
+  border: 1px solid #2a4a2e;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #f5f0e8;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.admin-portal .form-input:focus {
+  border-color: #c4a86b;
+  box-shadow: 0 0 0 2px rgba(196, 168, 107, 0.15);
+}
+
+.admin-portal .form-input::placeholder {
+  color: #444;
+}
+
+.admin-portal select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+/* ===== PRINT / PDF STYLES ===== */
+.print-only {
+  display: none;
+}
+
+@media print {
+  /* Hide everything except the invoice preview */
+  body > * {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+  }
+
+  .admin-form-wrapper,
+  .admin-portal header,
+  nav, footer,
+  button {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    background: #fff !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  #invoice-preview {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  #invoice-preview .invoice-preview-inner {
+    padding: 28px 36px 24px !important;
+  }
+}
+
