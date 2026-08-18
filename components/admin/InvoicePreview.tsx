@@ -59,8 +59,9 @@ const SECTION_COLORS = ["#C62828", "#1E73BE", "#689F38"];
 
 export default function InvoicePreview({ data }: { data: InvoiceData }) {
   const docLabel = data.documentType === "quote" ? "QUOTATION" : "INVOICE";
-  const fontFamily = data.fontFamily || "'Ebrima', 'Segoe UI', Tahoma, sans-serif";
-  const titleColor = data.titleColor || "#C62828";
+  const fontFamily =
+    data.fontFamily || "'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif";
+  const titleColor = data.titleColor || "#1A1A1A";
   const textColor = data.textColor || "#1A1A1A";
 
   return (
@@ -69,6 +70,8 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
       className="invoice-preview-root w-full bg-white shadow-xl rounded-md mx-auto"
       style={{
         ["--invoice-font" as string]: fontFamily,
+        ["--invoice-title-color" as string]: titleColor,
+        ["--invoice-text-color" as string]: textColor,
         fontFamily: fontFamily,
         color: textColor,
         fontSize: "10pt",
@@ -100,10 +103,11 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
           {/* Title + Tagline */}
           <div style={{ textAlign: "right" }}>
             <h1
+              className="invoice-main-title"
               style={{
                 fontSize: "26pt",
                 fontWeight: 700,
-                color: "#1A1A1A",
+                color: titleColor,
                 letterSpacing: "3px",
                 margin: 0,
                 lineHeight: 1.1,

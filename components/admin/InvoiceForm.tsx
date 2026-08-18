@@ -25,6 +25,30 @@ const DEFAULT_SECTION: InvoiceSection = {
   discountDescription: "",
 };
 
+const FONT_OPTIONS = [
+  { label: "Ebrima (Default)", value: "'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif" },
+  { label: "Nexa Bold", value: "'Nexa Bold', 'Nexa', sans-serif" },
+  { label: "Inter (Modern Sans)", value: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" },
+  { label: "Space Grotesk", value: "'Space Grotesk', sans-serif" },
+  { label: "Cormorant (Classic Serif)", value: "'Cormorant Garamond', Georgia, serif" },
+  { label: "Arial Clean", value: "Arial, Helvetica, sans-serif" },
+];
+
+const TITLE_COLOR_PRESETS = [
+  { label: "Solid Black (Default)", value: "#1A1A1A" },
+  { label: "CentzMi Red", value: "#C62828" },
+  { label: "CentzMi Blue", value: "#1E73BE" },
+  { label: "Forest Green", value: "#1E3323" },
+  { label: "CentzMi Gold", value: "#C4A86B" },
+];
+
+const TEXT_COLOR_PRESETS = [
+  { label: "Dark Charcoal (Default)", value: "#1A1A1A" },
+  { label: "Deep Slate", value: "#334155" },
+  { label: "Dark Green", value: "#1E3323" },
+  { label: "Pure Black", value: "#000000" },
+];
+
 function emptyInvoiceData(): InvoiceData {
   return {
     documentType: "invoice",
@@ -41,7 +65,7 @@ function emptyInvoiceData(): InvoiceData {
     paymentDetails: { ...DEFAULT_PAYMENT },
     rcNumber: "1828269",
     fontFamily: "'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif",
-    titleColor: "#C62828",
+    titleColor: "#1A1A1A",
     textColor: "#1A1A1A",
   };
 }
@@ -58,7 +82,7 @@ export default function InvoiceForm({
   const [saving, setSaving] = useState(false);
   const [saveMsg, setSaveMsg] = useState("");
   const [showPreview, setShowPreview] = useState(false);
-  const [showStyleMenu, setShowStyleMenu] = useState(true);
+  const [showStyleMenu, setShowStyleMenu] = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
 
   // ---- Recalculate totals ----
@@ -201,6 +225,152 @@ export default function InvoiceForm({
       <div className="admin-form-wrapper flex flex-col xl:flex-row gap-6 p-4 sm:p-6">
         {/* ===== LEFT: FORM ===== */}
         <div className="flex-1 min-w-0 max-w-2xl">
+          {/* Top Bar with Style Trigger Button */}
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-[#c4a86b] text-xs font-bold uppercase tracking-widest">
+              Document Builder
+            </span>
+
+            {/* Style Button matching user reference */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowStyleMenu(!showStyleMenu)}
+                className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl border transition-all shadow-sm ${
+                  showStyleMenu
+                    ? "bg-[#2a4a2e] border-[#c62828] text-white ring-2 ring-[#c62828]/40"
+                    : "bg-[#142618] border-[#2a4a2e] text-[#c62828] hover:border-[#c62828] hover:bg-[#1a2e1e]"
+                }`}
+                title="Customize Document Font & Colors"
+              >
+                {/* Painter's Palette SVG Icon */}
+                <svg
+                  className="w-4 h-4 text-[#c62828]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="13.5" cy="6.5" r=".8" fill="currentColor" />
+                  <circle cx="17.5" cy="10.5" r=".8" fill="currentColor" />
+                  <circle cx="8.5" cy="7.5" r=".8" fill="currentColor" />
+                  <circle cx="6.5" cy="12.5" r=".8" fill="currentColor" />
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+                </svg>
+                <span className="font-bold text-sm text-[#c62828]">Style</span>
+                <span className="text-[10px] text-[#888]">{showStyleMenu ? "▲" : "▼"}</span>
+              </button>
+
+              {/* Style Dropdown Popover */}
+              {showStyleMenu && (
+                <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 bg-[#0f1d13] border border-[#2a4a2e] rounded-2xl p-4 shadow-2xl z-30 backdrop-blur-md">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#2a4a2e]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm">🎨</span>
+                      <span className="text-[#c4a86b] text-xs font-bold uppercase tracking-widest">
+                        Document Styling
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        update({
+                          fontFamily: "'Ebrima', 'Segoe UI', Tahoma, Arial, sans-serif",
+                          titleColor: "#1A1A1A",
+                          textColor: "#1A1A1A",
+                        })
+                      }
+                      className="text-[#888] hover:text-[#c4a86b] text-[11px] font-semibold transition-colors"
+                      title="Reset font and colors to default"
+                    >
+                      ↺ Reset
+                    </button>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    {/* Font Selector */}
+                    <div>
+                      <label className="form-label text-[10px]">Font Family</label>
+                      <select
+                        value={data.fontFamily || FONT_OPTIONS[0].value}
+                        onChange={(e) => update({ fontFamily: e.target.value })}
+                        className="form-input text-xs"
+                      >
+                        {FONT_OPTIONS.map((f) => (
+                          <option key={f.value} value={f.value}>
+                            {f.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Title Color */}
+                    <div>
+                      <label className="form-label text-[10px]">Document Title Color</label>
+                      <div className="flex items-center gap-2 mt-1">
+                        <input
+                          type="color"
+                          value={data.titleColor || "#1A1A1A"}
+                          onChange={(e) => update({ titleColor: e.target.value })}
+                          className="w-7 h-7 rounded-md cursor-pointer bg-transparent border border-[#2a4a2e] p-0.5 shrink-0"
+                          title="Custom title color"
+                        />
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {TITLE_COLOR_PRESETS.map((p) => (
+                            <button
+                              key={p.value}
+                              type="button"
+                              onClick={() => update({ titleColor: p.value })}
+                              className={`w-4 h-4 rounded-full border transition-transform ${
+                                data.titleColor === p.value
+                                  ? "scale-125 border-white ring-1 ring-[#c4a86b]"
+                                  : "border-black/40 hover:scale-110"
+                              }`}
+                              style={{ background: p.value }}
+                              title={p.label}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Body Text Color */}
+                    <div>
+                      <label className="form-label text-[10px]">Body Text Color</label>
+                      <div className="flex items-center gap-2 mt-1">
+                        <input
+                          type="color"
+                          value={data.textColor || "#1A1A1A"}
+                          onChange={(e) => update({ textColor: e.target.value })}
+                          className="w-7 h-7 rounded-md cursor-pointer bg-transparent border border-[#2a4a2e] p-0.5 shrink-0"
+                          title="Custom text color"
+                        />
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {TEXT_COLOR_PRESETS.map((p) => (
+                            <button
+                              key={p.value}
+                              type="button"
+                              onClick={() => update({ textColor: p.value })}
+                              className={`w-4 h-4 rounded-full border transition-transform ${
+                                data.textColor === p.value
+                                  ? "scale-125 border-white ring-1 ring-[#c4a86b]"
+                                  : "border-black/40 hover:scale-110"
+                              }`}
+                              style={{ background: p.value }}
+                              title={p.label}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* Document Type & Invoice Number */}
           <div className="bg-[#1a2e1e] rounded-xl p-5 mb-5 border border-[#2a4a2e]">
             <h2 className="text-[#c4a86b] text-xs font-bold uppercase tracking-widest mb-4">
