@@ -93,13 +93,13 @@ export default function Footer() {
               <ul className="space-y-2 lg:space-y-3">
                 {footerLinks.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-xs lg:text-sm font-medium text-[#f5f0e8]/70 hover:text-[#c4a86b] transition-colors"
                       style={{ fontFamily: "'Nexa Bold', 'Nexa', sans-serif" }}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
