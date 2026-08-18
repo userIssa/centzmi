@@ -68,6 +68,7 @@ export default function InvoicePreview({ data }: { data: InvoiceData }) {
       id="invoice-preview"
       className="invoice-preview-root w-full bg-white shadow-xl rounded-md mx-auto"
       style={{
+        ["--invoice-font" as string]: fontFamily,
         fontFamily: fontFamily,
         color: textColor,
         fontSize: "10pt",
