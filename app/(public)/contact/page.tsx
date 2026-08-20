@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import RecaptchaWidget from "@/components/RecaptchaWidget";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -8,6 +9,7 @@ export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +25,10 @@ export default function ContactPage() {
     setStatus("submitting");
 
     try {
+      if (recaptchaToken) {
+        data.recaptchaToken = recaptchaToken;
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -144,6 +150,16 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                {/* Honeypot field for bot trapping */}
+                <input
+                  type="text"
+                  name="_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{ display: "none" }}
+                  aria-hidden="true"
+                />
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <CF label="Your Name" name="name" required error={errors.name} placeholder="Your full name " />
                   <CF label="Email" name="email" type="email" required error={errors.email} placeholder="mail@company.com" />
@@ -160,6 +176,12 @@ export default function ContactPage() {
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message}</p>}
                 </div>
+                {/* reCAPTCHA Widget */}
+                <RecaptchaWidget
+                  onVerify={(token) => setRecaptchaToken(token)}
+                  onExpire={() => setRecaptchaToken("")}
+                />
+
                 <button
                   type="submit" id="contact-submit"
                   disabled={status === "submitting"}

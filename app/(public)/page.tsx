@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import RecaptchaWidget from "@/components/RecaptchaWidget";
 import {
   solutions,
   industries,
@@ -58,6 +59,7 @@ export default function SinglePageHome() {
   const [contactStatus, setContactStatus] = useState<FormStatus>("idle");
   const [contactError, setContactError] = useState("");
   const [contactErrors, setContactErrors] = useState<Record<string, string>>({});
+  const [contactRecaptchaToken, setContactRecaptchaToken] = useState("");
 
   // Filtered & sliced portfolio lists
   const filteredPortfolio =
@@ -154,6 +156,10 @@ export default function SinglePageHome() {
     setContactStatus("submitting");
 
     try {
+      if (contactRecaptchaToken) {
+        data.recaptchaToken = contactRecaptchaToken;
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -1438,6 +1444,16 @@ export default function SinglePageHome() {
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} noValidate className="space-y-8">
+                  {/* Honeypot field for bot trapping */}
+                  <input
+                    type="text"
+                    name="_hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    style={{ display: "none" }}
+                    aria-hidden="true"
+                  />
+
                   {contactStatus === "error" && <div className="p-3 bg-red-50 border border-red-200 text-xs text-red-700 font-medium">{contactError}</div>}
 
                   {/* First Name & Last Name */}
@@ -1462,6 +1478,12 @@ export default function SinglePageHome() {
                     />
                     {contactErrors.message && <p className="text-red-500 text-xs mt-1 font-medium">{contactErrors.message}</p>}
                   </div>
+
+                  {/* reCAPTCHA Widget */}
+                  <RecaptchaWidget
+                    onVerify={(token) => setContactRecaptchaToken(token)}
+                    onExpire={() => setContactRecaptchaToken("")}
+                  />
 
                   {/* Submit Pill Button */}
                   <div className="pt-2">

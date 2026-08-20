@@ -2,11 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import { ContactSubmission } from "@/lib/models/ContactSubmission";
 import { transporter, MAIL_FROM, MAIL_TO } from "@/lib/mailer";
+import { verifyRecaptchaToken } from "@/lib/recaptcha";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, recaptchaToken, _hp, website_url } = body;
+
+    // 1. Silent honeypot trap: if a bot filled the hidden honeypot field, silently pretend success
+    if (_hp || website_url) {
+      console.warn("[api/contact] Bot detected via honeypot trap. Silently ignoring submission.");
+      return NextResponse.json({ success: true, id: "filtered" });
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -15,7 +22,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1. Save to MongoDB
+    // 2. Verify reCAPTCHA token
+    const verification = await verifyRecaptchaToken(recaptchaToken);
+    if (!verification.success) {
+      return NextResponse.json(
+        { error: "Spam verification failed. Please refresh the page and try again." },
+        { status: 400 }
+      );
+    }
+
+    // 3. Save to MongoDB
     await connectDB();
     const record = await ContactSubmission.create({ name, email, phone, message });
 
@@ -83,9 +99,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, id: record._id });
   } catch (err) {
-    console.error("[api/contact]", err);
+    console.error("[api/contact] Full error:", err);
+    const errorMessage =
+      err instanceof Error ? err.message : "Something went wrong. Please try again or contact us directly.";
     return NextResponse.json(
-      { error: "Something went wrong. Please try again or contact us directly." },
+      { error: errorMessage },
       { status: 500 }
     );
   }

@@ -1,4 +1,12 @@
 import mongoose from "mongoose";
+import dns from "node:dns";
+
+// Fix for Node.js querySrv ECONNREFUSED when resolving MongoDB Atlas SRV records
+try {
+  dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
+} catch {
+  // Ignore if not supported in runtime
+}
 
 const MONGODB_URI = process.env.MONGODB_URI as string;
 
@@ -24,11 +32,27 @@ export async function connectDB(): Promise<typeof mongoose> {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
-      bufferCommands: false,
-    });
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        bufferCommands: false,
+      })
+      .then((m) => {
+        cached.conn = m;
+        return m;
+      })
+      .catch((err) => {
+        cached.promise = null;
+        cached.conn = null;
+        throw err;
+      });
   }
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
+  } catch (err) {
+    cached.promise = null;
+    cached.conn = null;
+    throw err;
+  }
 }
