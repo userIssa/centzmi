@@ -54,6 +54,7 @@ export default function SinglePageHome() {
   const [quoteStatus, setQuoteStatus] = useState<FormStatus>("idle");
   const [quoteError, setQuoteError] = useState("");
   const [quoteErrors, setQuoteErrors] = useState<Record<string, string>>({});
+  const [quoteRecaptchaToken, setQuoteRecaptchaToken] = useState("");
 
   // Contact form state
   const [contactStatus, setContactStatus] = useState<FormStatus>("idle");
@@ -120,6 +121,10 @@ export default function SinglePageHome() {
     setQuoteStatus("submitting");
 
     try {
+      if (quoteRecaptchaToken) {
+        data.recaptchaToken = quoteRecaptchaToken;
+      }
+
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -1273,6 +1278,16 @@ export default function SinglePageHome() {
             </div>
           ) : (
             <form onSubmit={handleQuoteSubmit} noValidate className="space-y-6">
+              {/* Honeypot field for bot trapping */}
+              <input
+                type="text"
+                name="_hp"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ display: "none" }}
+                aria-hidden="true"
+              />
+
               {quoteStatus === "error" && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700 font-medium">{quoteError}</div>
               )}
@@ -1374,6 +1389,12 @@ export default function SinglePageHome() {
                   </label>
                 </div>
               </div>
+
+              {/* reCAPTCHA Widget */}
+              <RecaptchaWidget
+                onVerify={(token) => setQuoteRecaptchaToken(token)}
+                onExpire={() => setQuoteRecaptchaToken("")}
+              />
 
               <button
                 type="submit"

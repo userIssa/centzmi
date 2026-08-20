@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { solutions } from "@/lib/data";
+import RecaptchaWidget from "@/components/RecaptchaWidget";
 
 const budgetRanges = [
   "Under ₦500,000",
@@ -26,6 +27,7 @@ export default function QuotePage() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const validate = (data: Record<string, string>) => {
     const errs: Record<string, string> = {};
@@ -53,6 +55,10 @@ export default function QuotePage() {
     setStatus("submitting");
 
     try {
+      if (recaptchaToken) {
+        data.recaptchaToken = recaptchaToken;
+      }
+
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -129,8 +135,18 @@ export default function QuotePage() {
 
           {/* Form */}
           {status !== "success" && (
-            <form onSubmit={handleSubmit} noValidate className="space-y-6">
-              {/* Row 1 */}
+            <form onSubmit={handleSubmit} noValidate className="space-y-8">
+              {/* Honeypot field for bot trapping */}
+              <input
+                type="text"
+                name="_hp"
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ display: "none" }}
+                aria-hidden="true"
+              />
+
+              {/* 1. Contact details */}
               <div className="grid sm:grid-cols-2 gap-6">
                 <Field label="Full Name" name="fullName" required error={errors.fullName} placeholder="Your full name " />
                 <Field label="Company Name" name="company" required error={errors.company} placeholder="Your company name " />
@@ -244,6 +260,12 @@ export default function QuotePage() {
                   </label>
                 </div>
               </div>
+
+              {/* reCAPTCHA Widget */}
+              <RecaptchaWidget
+                onVerify={(token) => setRecaptchaToken(token)}
+                onExpire={() => setRecaptchaToken("")}
+              />
 
               {/* Submit */}
               <button
