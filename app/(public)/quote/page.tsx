@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { solutions } from "@/lib/data";
-import RecaptchaWidget from "@/components/RecaptchaWidget";
+import RecaptchaModal from "@/components/RecaptchaModal";
 
 const budgetRanges = [
   "Under ₦500,000",
@@ -27,7 +27,8 @@ export default function QuotePage() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [pendingData, setPendingData] = useState<Record<string, string> | null>(null);
 
   const validate = (data: Record<string, string>) => {
     const errs: Record<string, string> = {};
@@ -43,20 +44,13 @@ export default function QuotePage() {
     return errs;
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
-
-    const errs = validate(data);
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    setErrors({});
+  const executeSubmit = async (data: Record<string, string>, token?: string) => {
     setStatus("submitting");
+    setShowCaptcha(false);
 
     try {
-      if (recaptchaToken) {
-        data.recaptchaToken = recaptchaToken;
+      if (token) {
+        data.recaptchaToken = token;
       }
 
       const res = await fetch("/api/quote", {
@@ -70,6 +64,32 @@ export default function QuotePage() {
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
       setStatus("error");
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
+
+    const errs = validate(data);
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setErrors({});
+
+    // If site key is not configured (dev mode), submit directly
+    if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      executeSubmit(data);
+      return;
+    }
+
+    setPendingData(data);
+    setShowCaptcha(true);
+  };
+
+  const handleCaptchaVerify = (token: string) => {
+    if (pendingData) {
+      executeSubmit(pendingData, token);
     }
   };
 
@@ -261,12 +281,6 @@ export default function QuotePage() {
                 </div>
               </div>
 
-              {/* reCAPTCHA Widget */}
-              <RecaptchaWidget
-                onVerify={(token) => setRecaptchaToken(token)}
-                onExpire={() => setRecaptchaToken("")}
-              />
-
               {/* Submit */}
               <button
                 type="submit"
@@ -283,6 +297,15 @@ export default function QuotePage() {
               </p>
             </form>
           )}
+
+          {/* reCAPTCHA Security Verification Modal */}
+          <RecaptchaModal
+            isOpen={showCaptcha}
+            onClose={() => setShowCaptcha(false)}
+            onVerify={handleCaptchaVerify}
+            title="Security Verification"
+            description="Please complete this quick security check to submit your quote request."
+          />
         </div>
       </section>
     </>

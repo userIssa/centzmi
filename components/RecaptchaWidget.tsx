@@ -102,8 +102,8 @@ export default function RecaptchaWidget({
   if (!siteKey) return null;
 
   return (
-    <div className="my-3 flex flex-col items-start overflow-hidden">
-      <div ref={containerRef} id="recaptcha-container" />
+    <div className="flex flex-col items-center justify-center">
+      <div ref={containerRef} />
     </div>
   );
 }

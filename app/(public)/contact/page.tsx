@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import RecaptchaWidget from "@/components/RecaptchaWidget";
+import RecaptchaModal from "@/components/RecaptchaModal";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -9,24 +9,16 @@ export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const [pendingData, setPendingData] = useState<Record<string, string> | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
-
-    const errs: Record<string, string> = {};
-    if (!data.name) errs.name = "Name is required.";
-    if (!data.email) errs.email = "Email is required.";
-    if (!data.message) errs.message = "Message is required.";
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    setErrors({});
+  const executeSubmit = async (data: Record<string, string>, token?: string) => {
     setStatus("submitting");
+    setShowCaptcha(false);
 
     try {
-      if (recaptchaToken) {
-        data.recaptchaToken = recaptchaToken;
+      if (token) {
+        data.recaptchaToken = token;
       }
 
       const res = await fetch("/api/contact", {
@@ -40,6 +32,34 @@ export default function ContactPage() {
     } catch (err: unknown) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
       setStatus("error");
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
+
+    const errs: Record<string, string> = {};
+    if (!data.name) errs.name = "Name is required.";
+    if (!data.email) errs.email = "Email is required.";
+    if (!data.message) errs.message = "Message is required.";
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setErrors({});
+
+    // If site key is not configured (dev mode), submit directly
+    if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      executeSubmit(data);
+      return;
+    }
+
+    setPendingData(data);
+    setShowCaptcha(true);
+  };
+
+  const handleCaptchaVerify = (token: string) => {
+    if (pendingData) {
+      executeSubmit(pendingData, token);
     }
   };
 
@@ -176,12 +196,6 @@ export default function ContactPage() {
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message}</p>}
                 </div>
-                {/* reCAPTCHA Widget */}
-                <RecaptchaWidget
-                  onVerify={(token) => setRecaptchaToken(token)}
-                  onExpire={() => setRecaptchaToken("")}
-                />
-
                 <button
                   type="submit" id="contact-submit"
                   disabled={status === "submitting"}
@@ -192,6 +206,15 @@ export default function ContactPage() {
                 </button>
               </form>
             )}
+
+            {/* reCAPTCHA Security Verification Modal */}
+            <RecaptchaModal
+              isOpen={showCaptcha}
+              onClose={() => setShowCaptcha(false)}
+              onVerify={handleCaptchaVerify}
+              title="Security Verification"
+              description="Please complete this quick security check to send your message."
+            />
           </div>
         </div>
 

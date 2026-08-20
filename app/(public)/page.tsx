@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import RecaptchaWidget from "@/components/RecaptchaWidget";
+import RecaptchaModal from "@/components/RecaptchaModal";
 import {
   solutions,
   industries,
@@ -54,13 +54,15 @@ export default function SinglePageHome() {
   const [quoteStatus, setQuoteStatus] = useState<FormStatus>("idle");
   const [quoteError, setQuoteError] = useState("");
   const [quoteErrors, setQuoteErrors] = useState<Record<string, string>>({});
-  const [quoteRecaptchaToken, setQuoteRecaptchaToken] = useState("");
+  const [quoteShowCaptcha, setQuoteShowCaptcha] = useState(false);
+  const [pendingQuoteData, setPendingQuoteData] = useState<Record<string, string> | null>(null);
 
   // Contact form state
   const [contactStatus, setContactStatus] = useState<FormStatus>("idle");
   const [contactError, setContactError] = useState("");
   const [contactErrors, setContactErrors] = useState<Record<string, string>>({});
-  const [contactRecaptchaToken, setContactRecaptchaToken] = useState("");
+  const [contactShowCaptcha, setContactShowCaptcha] = useState(false);
+  const [pendingContactData, setPendingContactData] = useState<Record<string, string> | null>(null);
 
   // Filtered & sliced portfolio lists
   const filteredPortfolio =
@@ -96,8 +98,32 @@ export default function SinglePageHome() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedProject, filteredPortfolio]);
 
+  // Execute Quote Submit
+  const executeQuoteSubmit = async (data: Record<string, string>, token?: string) => {
+    setQuoteStatus("submitting");
+    setQuoteShowCaptcha(false);
+
+    try {
+      if (token) {
+        data.recaptchaToken = token;
+      }
+
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? "Submission failed.");
+      setQuoteStatus("success");
+    } catch (err: unknown) {
+      setQuoteError(err instanceof Error ? err.message : "Something went wrong.");
+      setQuoteStatus("error");
+    }
+  };
+
   // Quote form handler
-  const handleQuoteSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleQuoteSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
@@ -118,29 +144,49 @@ export default function SinglePageHome() {
       return;
     }
     setQuoteErrors({});
-    setQuoteStatus("submitting");
+
+    // If site key is not configured (dev mode), submit directly
+    if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      executeQuoteSubmit(data);
+      return;
+    }
+
+    setPendingQuoteData(data);
+    setQuoteShowCaptcha(true);
+  };
+
+  const handleQuoteCaptchaVerify = (token: string) => {
+    if (pendingQuoteData) {
+      executeQuoteSubmit(pendingQuoteData, token);
+    }
+  };
+
+  // Execute Contact Submit
+  const executeContactSubmit = async (data: Record<string, string>, token?: string) => {
+    setContactStatus("submitting");
+    setContactShowCaptcha(false);
 
     try {
-      if (quoteRecaptchaToken) {
-        data.recaptchaToken = quoteRecaptchaToken;
+      if (token) {
+        data.recaptchaToken = token;
       }
 
-      const res = await fetch("/api/quote", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Submission failed.");
-      setQuoteStatus("success");
+      setContactStatus("success");
     } catch (err: unknown) {
-      setQuoteError(err instanceof Error ? err.message : "Something went wrong.");
-      setQuoteStatus("error");
+      setContactError(err instanceof Error ? err.message : "Something went wrong.");
+      setContactStatus("error");
     }
   };
 
   // Contact form handler
-  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = Object.fromEntries(fd.entries()) as Record<string, string>;
@@ -158,24 +204,20 @@ export default function SinglePageHome() {
       return;
     }
     setContactErrors({});
-    setContactStatus("submitting");
 
-    try {
-      if (contactRecaptchaToken) {
-        data.recaptchaToken = contactRecaptchaToken;
-      }
+    // If site key is not configured (dev mode), submit directly
+    if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+      executeContactSubmit(data);
+      return;
+    }
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Submission failed.");
-      setContactStatus("success");
-    } catch (err: unknown) {
-      setContactError(err instanceof Error ? err.message : "Something went wrong.");
-      setContactStatus("error");
+    setPendingContactData(data);
+    setContactShowCaptcha(true);
+  };
+
+  const handleContactCaptchaVerify = (token: string) => {
+    if (pendingContactData) {
+      executeContactSubmit(pendingContactData, token);
     }
   };
 
@@ -1390,12 +1432,6 @@ export default function SinglePageHome() {
                 </div>
               </div>
 
-              {/* reCAPTCHA Widget */}
-              <RecaptchaWidget
-                onVerify={(token) => setQuoteRecaptchaToken(token)}
-                onExpire={() => setQuoteRecaptchaToken("")}
-              />
-
               <button
                 type="submit"
                 disabled={quoteStatus === "submitting"}
@@ -1406,6 +1442,15 @@ export default function SinglePageHome() {
               </button>
             </form>
           )}
+
+          {/* Quote Security Verification Modal */}
+          <RecaptchaModal
+            isOpen={quoteShowCaptcha}
+            onClose={() => setQuoteShowCaptcha(false)}
+            onVerify={handleQuoteCaptchaVerify}
+            title="Security Verification"
+            description="Please complete this quick security check to submit your quote request."
+          />
         </div>
       </section>
 
@@ -1500,12 +1545,6 @@ export default function SinglePageHome() {
                     {contactErrors.message && <p className="text-red-500 text-xs mt-1 font-medium">{contactErrors.message}</p>}
                   </div>
 
-                  {/* reCAPTCHA Widget */}
-                  <RecaptchaWidget
-                    onVerify={(token) => setContactRecaptchaToken(token)}
-                    onExpire={() => setContactRecaptchaToken("")}
-                  />
-
                   {/* Submit Pill Button */}
                   <div className="pt-2">
                     <button
@@ -1519,6 +1558,15 @@ export default function SinglePageHome() {
                   </div>
                 </form>
               )}
+
+              {/* Contact Security Verification Modal */}
+              <RecaptchaModal
+                isOpen={contactShowCaptcha}
+                onClose={() => setContactShowCaptcha(false)}
+                onVerify={handleContactCaptchaVerify}
+                title="Security Verification"
+                description="Please complete this quick security check to send your message."
+              />
             </div>
           </div>
 
